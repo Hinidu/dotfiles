@@ -211,6 +211,6 @@ nnoremap <F5> :!runsolution<cr>
 nnoremap <F7> :cexpr system('compile')<cr>:botright copen<cr>
 nnoremap <F9> :!executor<cr>
 nnoremap <leader>at :!addtest<cr>
-nnoremap <leader>io :10 split in<cr>r:vsplit out<cr>r:setlocal autoread<cr>k
+nnoremap <leader>io :botright 10 split in<cr>:rightbelow vsplit out<cr>:setlocal autoread<cr><c-w>k
 
 " ACM specific settings, mappings and other stuff }}}
