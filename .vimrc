@@ -114,6 +114,8 @@ set shiftround
 
 " Ignore case in search when pattern has no uppercase letters
 set smartcase
+" Highlight the next match while I'm still typing out search pattern
+set incsearch
 
 " Show line numbers relative to current line
 set relativenumber
