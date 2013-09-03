@@ -34,6 +34,7 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
