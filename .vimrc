@@ -19,7 +19,7 @@ NeoBundle 'Shougo/vimproc', {
             \ }
 
 " My Bundles here: {{{
-"
+
 " Original repos on github
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'SirVer/ultisnips'
@@ -35,22 +35,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'Lokaltog/vim-easymotion'
-" NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-" NeoBundle 'L9'
-" NeoBundle 'FuzzyFinder'
-" NeoBundle 'rails.vim'
-" Non github repos
-" NeoBundle 'git://git.wincent.com/command-t.git'
-" gist repos
-" NeoBundle 'gist:Shougo/656148', {
-        " \ 'name': 'everything.vim',
-        " \ 'script_type': 'plugin'}
-" Non git repos
-" NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-" NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
+
 " }}}
 
 filetype plugin indent on     " Required!
