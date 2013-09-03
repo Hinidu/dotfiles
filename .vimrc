@@ -143,6 +143,9 @@ set laststatus=2
 " Use space as leader key
 let mapleader=" "
 
+" Always use very magic patterns
+nnoremap / /\v
+
 " Use ii as <esc> in insert mode to fast return to normal mode
 inoremap ii <esc>
 inoremap <esc> <nop>
