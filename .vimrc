@@ -150,6 +150,9 @@ nnoremap / /\v
 inoremap ii <esc>
 inoremap <esc> <nop>
 
+" Stop highlighting items from the last search with <leader>hl
+nnoremap <leader>hl :nohlsearch<cr>
+
 " Open ~/.vimrc in a split window
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source ~/.vimrc file
