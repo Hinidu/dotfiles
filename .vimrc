@@ -158,6 +158,10 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source ~/.vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Fast movements between quickfix list entries
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cprevious<cr>
+
 " Uppercase current word with <leader>Ctrl-U
 inoremap <leader><c-u> <esc>:call PreserveState("normal viwUi")<cr>
 nnoremap <leader><c-u> v
@@ -205,6 +209,6 @@ nnoremap <F5> :!runsolution<cr>
 nnoremap <F7> :cexpr system('compile')<cr>:botright copen<cr>
 nnoremap <F9> :!executor<cr>
 nnoremap <leader>at :!addtest<cr>
-nnoremap <leader>io :botright 10 split in<cr>:rightbelow vsplit out<cr>:setlocal autoread<cr><c-w>k
+nnoremap <leader>io :botright 10 split in<cr>:rightbelow vsplit out<cr>:setlocal autoread<cr>:wincmd k<cr>
 
 " ACM specific settings, mappings and other stuff }}}
