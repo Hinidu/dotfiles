@@ -209,6 +209,22 @@ nnoremap <F5> :!runsolution<cr>
 nnoremap <F7> :cexpr system('compile')<cr>:botright copen<cr>
 nnoremap <F9> :!executor<cr>
 nnoremap <leader>at :!addtest<cr>
-nnoremap <leader>io :botright 10 split in<cr>:rightbelow vsplit out<cr>:setlocal autoread<cr>:wincmd k<cr>
+nnoremap <leader>io :call ToggleIO()<cr>
+
+let s:io_is_open = 0
+function! ToggleIO()
+    if s:io_is_open
+        bdelete in
+        bdelete out
+        let s:io_is_open = 0
+    else
+        let s:io_is_open = 1
+        let l:cur_window = winnr()
+        botright 10 split in
+        rightbelow vsplit out
+        setlocal autoread
+        execute l:cur_window . "wincmd w"
+    endif
+endfunction
 
 " ACM specific settings, mappings and other stuff }}}
