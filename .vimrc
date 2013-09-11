@@ -240,7 +240,8 @@ function! FindRedirectedFile(code, type)
 endfunction
 
 function! FindIONames()
-    let l:preprocessed = system('g++ -E ' . expand('%'))
+    let l:source_name = bufname('*.cpp')
+    let l:preprocessed = system('g++ -E ' . expand(l:source_name))
     return [FindRedirectedFile(l:preprocessed, 'stdin')
         \ , FindRedirectedFile(l:preprocessed, 'stdout')]
 endfunction
