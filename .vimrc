@@ -35,9 +35,16 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
+            \   'type' : 'hg',
+            \   'build' : {
+            \       'unix' : 'env EDITOR=vim vimdir=$HOME/.vim/bundle/pyclewn python setup.py install --force --home=$HOME',
+            \   },
+            \ }
 
-NeoBundle '~/.vim/bundle/acvim'
-NeoBundle '~/.vim/bundle/potion'
+NeoBundle '~/.vim/local_bundle/acvim'
+NeoBundle '~/.vim/local_bundle/potion'
 
 " }}}
 
