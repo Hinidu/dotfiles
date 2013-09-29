@@ -43,10 +43,8 @@ NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
             \   },
             \ }
 
-NeoBundle 'Hinidu/acvim',
-            \ { 'base' : '$HOME/sources/vim' }
-NeoBundle 'Hinidu/potion',
-            \ { 'base' : '$HOME/sources/vim' }
+NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
+NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
 
 " }}}
 
