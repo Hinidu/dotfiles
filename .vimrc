@@ -124,6 +124,9 @@ set number
 " Highlight line under the cursor
 set cursorline
 
+" Show possible matches for command-line completion
+set wildmenu
+
 " Allow to switch to russian keymap with Ctrl-^ in insert mode
 " This change would affect insert mode and search
 set keymap=russian-jcukenwin
