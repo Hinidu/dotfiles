@@ -12,22 +12,18 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
-NeoBundle 'Shougo/vimproc', {
-            \   'build' : {
-            \       'unix' : 'make -f make_unix.mak',
-            \   },
-            \ }
+NeoBundle 'Shougo/vimproc', { 'build' : {
+        \ 'unix' : 'make -f make_unix.mak',
+        \ }}
 
 " My Bundles here: {{{
 
 " Original repos on github
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'SirVer/ultisnips'
-NeoBundle 'Valloric/YouCompleteMe', {
-            \   'build' : {
-            \       'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
-            \   },
-            \ }
+NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+        \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ }}
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomtom/tcomment_vim'
@@ -42,6 +38,14 @@ NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
             \       'unix' : 'env EDITOR=vim vimdir=$HOME/.vim/bundle/pyclewn python setup.py install --force --home=$HOME',
             \   },
             \ }
+
+NeoBundleLazy 'matchit.zip', { 'autoload' : {
+        \ 'mappings' : ['%', 'g%']
+        \ }}
+let bundle = neobundle#get('matchit.zip')
+function! bundle.hooks.on_post_source(bundle)
+    silent! execute 'doautocmd Filetype' &filetype
+endfunction
 
 NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
 NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
