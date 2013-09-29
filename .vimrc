@@ -33,11 +33,12 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
-            \   'type' : 'hg',
-            \   'build' : {
-            \       'unix' : 'env EDITOR=vim vimdir=$HOME/.vim/bundle/pyclewn python setup.py install --force --home=$HOME',
-            \   },
-            \ }
+        \   'type' : 'hg',
+        \   'rtp' : 'runtime',
+        \   'build' : {
+        \       'unix' : 'env vimdir=$HOME/.vim/bundle/pyclewn/runtime python setup.py install --force --home=$HOME',
+        \   },
+        \ }
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
