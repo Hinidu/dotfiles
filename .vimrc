@@ -92,6 +92,8 @@ let g:syntastic_full_redraws = 0
 set updatetime=500
 " }}}
 
+" pyclewn
+let g:pyclewn_args="--terminal=urxvt,-e"
 
 " Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
