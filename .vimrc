@@ -39,6 +39,7 @@ NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
         \       'unix' : 'env vimdir=$HOME/.vim/bundle/pyclewn/runtime python setup.py install --force --home=$HOME',
         \   },
         \ }
+NeoBundle 'matze/vim-move'
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -90,6 +91,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_full_redraws = 0
 " To quickly update UI with errors/warnings reported by syntastic
 set updatetime=500
+" }}}
+
+let g:move_key_modifier = 'C'
+" move {{{
 " }}}
 
 " pyclewn
@@ -183,7 +188,7 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>p :cprevious<cr>
 
 " Uppercase current word with <leader>Ctrl-U
-inoremap <leader><c-u> <esc>:call PreserveState("normal viwUi")<cr>
+inoremap <c-u> <esc>:call PreserveState("normal viwUi")<cr>
 nnoremap <leader><c-u> v
 
 " Remove trailing spaces in file
