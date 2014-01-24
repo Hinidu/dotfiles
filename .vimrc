@@ -197,6 +197,11 @@ nnoremap <leader>= :call PreserveState("normal gg=G")<cr>
 
 " FileType-specific settings {{{
 
+augroup filetype_haskell
+    autocmd!
+    autocmd Filetype haskell setlocal softtabstop=0
+augroup end
+
 augroup filetype_vim
     autocmd!
     " Fold all markers the first time open the file
