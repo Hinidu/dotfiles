@@ -199,6 +199,7 @@ nnoremap <leader>= :call PreserveState("normal gg=G")<cr>
 
 augroup filetype_haskell
     autocmd!
+    " Backspace remove only one space in beginning of line in haskell sources
     autocmd Filetype haskell setlocal softtabstop=0
 augroup end
 
