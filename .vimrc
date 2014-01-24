@@ -84,11 +84,7 @@ nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " syntastic  {{{
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_c_checker = ['ycm']
-let g:syntastic_cpp_checker = ['ycm']
 let g:syntastic_always_populate_loc_list = 1
-" To avoid flickering of vim
-let g:syntastic_full_redraws = 0
 " To quickly update UI with errors/warnings reported by syntastic
 set updatetime=500
 " }}}
