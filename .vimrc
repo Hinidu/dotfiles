@@ -40,6 +40,7 @@ NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
         \   },
         \ }
 NeoBundle 'matze/vim-move'
+NeoBundle 'godlygeek/tabular'
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -89,15 +90,20 @@ let g:syntastic_always_populate_loc_list = 1
 set updatetime=500
 " }}}
 
+" move
 let g:move_key_modifier = 'C'
-" move {{{
-" }}}
 
 " pyclewn
 let g:pyclewn_args="--terminal=urxvt,-e"
 
 " Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
+
+" Tabular
+if exists(":Tabularize")
+    nmap <leader>a= :Tabularize /=<CR>
+    vmap <leader>a= :Tabularize /=<CR>
+endif
 
 " NeoBundle and plugins setup }}}
 
