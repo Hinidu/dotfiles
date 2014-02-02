@@ -21,9 +21,9 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 " Original repos on github
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'SirVer/ultisnips'
-NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
-        \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ }}
+" NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+"         \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
+"         \ }}
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomtom/tcomment_vim'
@@ -32,13 +32,13 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
-        \   'type' : 'hg',
-        \   'rtp' : 'runtime',
-        \   'build' : {
-        \       'unix' : 'env vimdir=$HOME/.vim/bundle/pyclewn/runtime python setup.py install --force --home=$HOME',
-        \   },
-        \ }
+" NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
+"         \   'type' : 'hg',
+"         \   'rtp' : 'runtime',
+"         \   'build' : {
+"         \       'unix' : 'env vimdir=$HOME/.vim/bundle/pyclewn/runtime python setup.py install --force --home=$HOME',
+"         \   },
+"         \ }
 NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
 
@@ -75,11 +75,11 @@ let g:UltiSnipsExpandTrigger = '<c-j>'
 
 
 " YouCompleteMe {{{
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_allow_changing_updatetime = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" let g:ycm_confirm_extra_conf = 0
+" let g:ycm_allow_changing_updatetime = 0
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
+" nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " }}}
 
 
@@ -94,7 +94,7 @@ set updatetime=500
 let g:move_key_modifier = 'C'
 
 " pyclewn
-let g:pyclewn_args="--terminal=urxvt,-e"
+" let g:pyclewn_args="--terminal=urxvt,-e"
 
 " Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
