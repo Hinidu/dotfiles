@@ -98,7 +98,7 @@ let g:move_key_modifier = 'C'
 " let g:pyclewn_args="--terminal=urxvt,-e"
 
 " Tagbar
-nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader>tb :TagbarToggle<CR>
 
 " Tabular
 if exists(":Tabularize")
