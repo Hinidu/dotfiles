@@ -41,7 +41,10 @@ NeoBundle 'tpope/vim-surround'
 "         \ }
 NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'dag/vim2hs'
+NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'eagletmt/neco-ghc'
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -110,6 +113,14 @@ if exists(":Tabularize")
     vmap <leader>a<space> :Tabularize / /l0<CR>
 endif
 " }}}
+
+" vim2hs
+let g:haskell_conceal_enumerations = 0
+
+" ghcmod
+nnoremap <leader>tt :GhcModType<CR>
+nnoremap <leader>ti :GhcModTypeInsert<CR>
+nnoremap <leader>tc :GhcModTypeClear<CR>
 
 " neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
