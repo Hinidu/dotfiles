@@ -100,11 +100,16 @@ let g:move_key_modifier = 'C'
 " Tagbar
 nnoremap <leader>tb :TagbarToggle<CR>
 
-" Tabular
+" Tabular {{{
 if exists(":Tabularize")
-    nmap <leader>a= :Tabularize /=<CR>
-    vmap <leader>a= :Tabularize /=<CR>
+    nmap <leader>a=       :Tabularize /=<CR>
+    vmap <leader>a=       :Tabularize /=<CR>
+    nmap <leader>a<Bar>   :Tabularize /<Bar><CR>
+    vmap <leader>a<Bar>   :Tabularize /<Bar><CR>
+    nmap <leader>a<space> :Tabularize / /l0<CR>
+    vmap <leader>a<space> :Tabularize / /l0<CR>
 endif
+" }}}
 
 " neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
