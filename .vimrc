@@ -41,6 +41,7 @@ NeoBundle 'tpope/vim-surround'
 "         \ }
 NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'Shougo/neocomplete.vim'
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -104,6 +105,9 @@ if exists(":Tabularize")
     nmap <leader>a= :Tabularize /=<CR>
     vmap <leader>a= :Tabularize /=<CR>
 endif
+
+" neocomplete.vim
+let g:neocomplete#enable_at_startup = 1
 
 " NeoBundle and plugins setup }}}
 
