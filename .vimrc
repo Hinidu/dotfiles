@@ -182,6 +182,10 @@ set mouse=a
 " Always show status line
 set laststatus=2
 
+" Highlight longer than 80 columns lines
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.\+/
+
 " Settings }}}
 
 
