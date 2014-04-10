@@ -1,0 +1,19 @@
+Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
+       , bgColor = "#002b36"
+       , fgColor = "#657b83"
+       , position = Top
+       , lowerOnStart = False
+       , hideOnStart = False
+       , allDesktops = True
+       , overrideRedirect = False
+       , persistent = False
+       , border = NoBorder
+       , borderColor = "#002b36"
+       , commands = [ Run Date "<fc=#CB4B16>%a %b %_d %H:%M:%S</fc>" "date" 10
+                    , Run Com "cmus-status" [] "cmus" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ <fc=#268bd2><icon=/home/hinidu/.xmonad/icons/mpd.xbm/> %cmus% <action=cmus-remote --prev><icon=/home/hinidu/.xmonad/icons/prev.xbm/></action> <action=cmus-remote --pause><icon=/home/hinidu/.xmonad/icons/play-pause.xbm/></action> <action=cmus-remote --stop><icon=/home/hinidu/.xmonad/icons/stop.xbm/></action> <action=cmus-remote --next><icon=/home/hinidu/.xmonad/icons/next.xbm/></action></fc> <action=amixer set Master toggle><fc=#DC322F><icon=/home/hinidu/.xmonad/icons/vol-mute.xbm/></fc></action> %date%"
+       }

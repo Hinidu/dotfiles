@@ -21,9 +21,9 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 " Original repos on github
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'SirVer/ultisnips'
-" NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
-"         \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
-"         \ }}
+NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+        \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ }}
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomtom/tcomment_vim'
@@ -32,6 +32,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-eunuch'
 " NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
 "         \   'type' : 'hg',
 "         \   'rtp' : 'runtime',
@@ -45,6 +46,8 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'MarcWeber/vim-addon-local-vimrc'
+NeoBundle 'leafo/moonscript-vim'
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -79,12 +82,25 @@ let g:UltiSnipsExpandTrigger = '<c-j>'
 
 
 " YouCompleteMe {{{
-" let g:ycm_confirm_extra_conf = 0
-" let g:ycm_allow_changing_updatetime = 0
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
-" nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_allow_changing_updatetime = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
 " }}}
+
+
+function! NeoCompleteSafeDisable()
+    if exists(':NeoCompleteDisable')
+        NeoCompleteDisable
+    endif
+endfunction
+
+autocmd FileType c :call NeoCompleteSafeDisable()
+autocmd FileType cpp :call NeoCompleteSafeDisable()
+autocmd FileType cs :call NeoCompleteSafeDisable()
+autocmd FileType python :call NeoCompleteSafeDisable()
 
 
 " syntastic  {{{
@@ -105,12 +121,18 @@ nnoremap <leader>tb :TagbarToggle<CR>
 
 " Tabular {{{
 if exists(":Tabularize")
-    nmap <leader>a=       :Tabularize /=<CR>
-    vmap <leader>a=       :Tabularize /=<CR>
+    nmap <leader>a=       :Tabularize haskell_bindings<CR>
+    vmap <leader>a=       :Tabularize haskell_bindings<CR>
     nmap <leader>a<Bar>   :Tabularize /<Bar><CR>
     vmap <leader>a<Bar>   :Tabularize /<Bar><CR>
     nmap <leader>a<space> :Tabularize / /l0<CR>
     vmap <leader>a<space> :Tabularize / /l0<CR>
+    nmap <leader>ai       :Tabularize haskell_imports<CR>
+    vmap <leader>ai       :Tabularize haskell_imports<CR>
+    nmap <leader>ac       :Tabularize haskell_comments<CR>
+    vmap <leader>ac       :Tabularize haskell_comments<CR>
+    nmap <leader>a:       :Tabularize haskell_types<CR>
+    vmap <leader>a:       :Tabularize haskell_types<CR>
 endif
 " }}}
 
@@ -197,8 +219,8 @@ let mapleader=" "
 nnoremap / /\v
 
 " Use ii as <esc> in insert mode to fast return to normal mode
-inoremap ii <esc>
-inoremap <esc> <nop>
+" inoremap <M-i> <esc>
+" inoremap <esc> <nop>
 
 " Stop highlighting items from the last search with <leader>hl
 nnoremap <leader>hl :nohlsearch<cr>
@@ -220,6 +242,9 @@ nnoremap <leader><c-u> v
 nnoremap <leader>$ :call PreserveState("%s/\\s\\+$//e")<cr>
 " Reindent all lines in file
 nnoremap <leader>= :call PreserveState("normal gg=G")<cr>
+
+" Toggle spell checking
+nnoremap <leader>sp :set spell!<cr>
 
 " Mappings }}}
 

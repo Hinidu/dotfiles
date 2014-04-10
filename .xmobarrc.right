@@ -1,0 +1,28 @@
+Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
+       , bgColor = "#002b36"
+       , fgColor = "#657b83"
+       , position = Top
+       , lowerOnStart = False
+       , hideOnStart = False
+       , allDesktops = True
+       , overrideRedirect = False
+       , persistent = False
+       , border = NoBorder
+       , borderColor = "#002b36"
+       , commands = [ Run Uptime ["-t", "<fc=#2AA198><icon=/home/hinidu/.xmonad/icons/uptime.xbm/></fc> <days>:<hours>:<minutes>"] 600
+                    , Run Cpu ["-t", "<fc=#B58900><icon=/home/hinidu/.xmonad/icons/cpu.xbm/></fc> <total>", "-S", "True", "-L","20","-H","50","--normal","#B58900","--high","#DC322F"] 10
+                    , Run CoreTemp ["-t", "<core0><icon=/home/hinidu/.xmonad/icons/degree.xbm/>"] 100
+                    , Run Memory ["-t", "<fc=#D33682><icon=/home/hinidu/.xmonad/icons/mem.xbm/></fc> <used>MB", "-L", "1024", "-H", "2048", "--normal", "#B58900", "--high", "#DC322F"] 10
+                    , Run Wireless "wlp4s0" ["-t", "<fc=#CB4B16><icon=/home/hinidu/.xmonad/icons/net-wifi.xbm/></fc> <essid>"] 100
+                    , Run DynNetwork ["-t", "<fc=#268bd2><icon=/home/hinidu/.xmonad/icons/load.xbm/></fc> <rx>/<tx>"] 10
+                    , Run DiskU [("/", "<fc=#DC322F><icon=/home/hinidu/.xmonad/icons/root.xbm/></fc> <used>/<size>"), ("/home", "<fc=#6C414C><icon=/home/hinidu/.xmonad/icons/home.xbm/></fc> <used>/<size>")] [] 100
+                    , Run Date "<fc=#CB4B16>%a %b %_d %H:%M:%S</fc>" "date" 10
+                    , Run Weather "UMKK" ["-t","<tempC><icon=/home/hinidu/.xmonad/icons/degree.xbm/>", "-L", "10", "-H", "20", "--low", "#268BD2", "--normal", "#B58900", "--high", "#DC322F"] 600
+                    , Run Kbd [("us", "US"), ("ru", "RU")]
+                    , Run Com "uname" ["-r"] "kernel" 0
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ <fc=#6c71c4><icon=/home/hinidu/.xmonad/icons/gentoo.xbm/> %kernel%</fc> %uptime% %cpu% %coretemp% %memory% %wlp4s0wi% %dynnetwork% %disku% %date% <fc=#2AA198><icon=/home/hinidu/.xmonad/icons/temp.xbm/></fc> %UMKK% <fc=#859900>%kbd%</fc>"
+       }
