@@ -7,4 +7,9 @@ if [ -e /usr/bin/feh ] && [ -e $HOME/.fehbg ]
 	#then feh --bg-max "`find "/home/hinidu/photo" -type f -name "*.jpg" | shuf -n 1`"
 fi
 
+if hash VBoxClient 2>/dev/null; then
+    VBoxClient --clipboard
+    VBoxClient --display
+fi
+
 exec ck-launch-session xmonad
