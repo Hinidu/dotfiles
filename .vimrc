@@ -86,7 +86,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_allow_changing_updatetime = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
 let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
 " }}}
 
