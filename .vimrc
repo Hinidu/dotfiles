@@ -33,13 +33,6 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-eunuch'
-" NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
-"         \   'type' : 'hg',
-"         \   'rtp' : 'runtime',
-"         \   'build' : {
-"         \       'unix' : 'env vimdir=$HOME/.vim/bundle/pyclewn/runtime python setup.py install --force --home=$HOME',
-"         \   },
-"         \ }
 NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'dag/vim2hs'
@@ -116,9 +109,6 @@ set updatetime=500
 
 " move
 let g:move_key_modifier = 'C'
-
-" pyclewn
-" let g:pyclewn_args="--terminal=urxvt,-e"
 
 " Tagbar
 nnoremap <leader>tb :TagbarToggle<CR>
