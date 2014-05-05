@@ -20,10 +20,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 
 " Original repos on github
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
-        \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ }}
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomtom/tcomment_vim'
@@ -37,10 +33,20 @@ NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'leafo/moonscript-vim'
+
+if has('python')
+    NeoBundle 'SirVer/ultisnips'
+    NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+            \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
+            \ }}
+endif
+
+if has('lua')
+    NeoBundle 'Shougo/neocomplete.vim'
+endif
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -72,20 +78,22 @@ colorscheme solarized
 " }}}
 
 
-" UltiSnips {{{
-let g:UltiSnipsEditSplit = 'vertical'
-let g:UltiSnipsExpandTrigger = '<c-j>'
-" }}}
+if has('python')
+    " UltiSnips {{{
+    let g:UltiSnipsEditSplit = 'vertical'
+    let g:UltiSnipsExpandTrigger = '<c-j>'
+    " }}}
 
 
-" YouCompleteMe {{{
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_allow_changing_updatetime = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
-" }}}
+    " YouCompleteMe {{{
+    let g:ycm_confirm_extra_conf = 0
+    let g:ycm_allow_changing_updatetime = 0
+    let g:ycm_complete_in_comments = 1
+    let g:ycm_seed_identifiers_with_syntax = 1
+    nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
+    " }}}
+endif
 
 
 function! NeoCompleteSafeDisable()
@@ -138,8 +146,10 @@ nnoremap <leader>tt :GhcModType<CR>
 nnoremap <leader>ti :GhcModTypeInsert<CR>
 nnoremap <leader>tc :GhcModTypeClear<CR>
 
-" neocomplete.vim
-let g:neocomplete#enable_at_startup = 1
+if has('lua')
+    " neocomplete.vim
+    let g:neocomplete#enable_at_startup = 1
+endif
 
 let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 
