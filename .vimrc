@@ -151,6 +151,8 @@ nnoremap <leader>tc :GhcModTypeClear<CR>
 " neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
 
+let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
+
 " NeoBundle and plugins setup }}}
 
 
