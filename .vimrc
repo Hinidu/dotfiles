@@ -20,10 +20,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 
 " Original repos on github
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
-        \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ }}
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomtom/tcomment_vim'
@@ -33,21 +29,24 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-eunuch'
-" NeoBundle 'http://hg.code.sf.net/p/pyclewn/pyclewn', {
-"         \   'type' : 'hg',
-"         \   'rtp' : 'runtime',
-"         \   'build' : {
-"         \       'unix' : 'env vimdir=$HOME/.vim/bundle/pyclewn/runtime python setup.py install --force --home=$HOME',
-"         \   },
-"         \ }
 NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'leafo/moonscript-vim'
+
+if has('python')
+    NeoBundle 'SirVer/ultisnips'
+    NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+            \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
+            \ }}
+endif
+
+if has('lua')
+    NeoBundle 'Shougo/neocomplete.vim'
+endif
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
@@ -57,8 +56,12 @@ function! bundle.hooks.on_post_source(bundle)
     silent! execute 'doautocmd Filetype' &filetype
 endfunction
 
-NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
-NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
+if filereadable('~/sources/vim/acvim')
+    NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
+endif
+if filereadable('~/sources/vim/potion')
+    NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
+endif
 
 " }}}
 
@@ -75,20 +78,22 @@ colorscheme solarized
 " }}}
 
 
-" UltiSnips {{{
-let g:UltiSnipsEditSplit = 'vertical'
-let g:UltiSnipsExpandTrigger = '<c-j>'
-" }}}
+if has('python')
+    " UltiSnips {{{
+    let g:UltiSnipsEditSplit = 'vertical'
+    let g:UltiSnipsExpandTrigger = '<c-j>'
+    " }}}
 
 
-" YouCompleteMe {{{
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_allow_changing_updatetime = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-nnoremap <leader>gt :YcmCompleter GoTo<CR>
-let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
-" }}}
+    " YouCompleteMe {{{
+    let g:ycm_confirm_extra_conf = 0
+    let g:ycm_allow_changing_updatetime = 0
+    let g:ycm_complete_in_comments = 1
+    let g:ycm_seed_identifiers_with_syntax = 1
+    nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
+    " }}}
+endif
 
 
 function! NeoCompleteSafeDisable()
@@ -113,9 +118,6 @@ set updatetime=500
 
 " move
 let g:move_key_modifier = 'C'
-
-" pyclewn
-" let g:pyclewn_args="--terminal=urxvt,-e"
 
 " Tagbar
 nnoremap <leader>tb :TagbarToggle<CR>
@@ -145,8 +147,12 @@ nnoremap <leader>tt :GhcModType<CR>
 nnoremap <leader>ti :GhcModTypeInsert<CR>
 nnoremap <leader>tc :GhcModTypeClear<CR>
 
-" neocomplete.vim
-let g:neocomplete#enable_at_startup = 1
+if has('lua')
+    " neocomplete.vim
+    let g:neocomplete#enable_at_startup = 1
+endif
+
+let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 
 " NeoBundle and plugins setup }}}
 
