@@ -106,6 +106,7 @@ autocmd FileType python :call NeoCompleteSafeDisable()
 " syntastic  {{{
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_tex_checkers = ['lacheck']
 " To quickly update UI with errors/warnings reported by syntastic
 set updatetime=500
 " }}}
