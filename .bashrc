@@ -13,7 +13,8 @@ alias df='df -h'
 alias du='du -c -h'
 alias ping='ping -c 5'
 
-alias skype='LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype'
+alias skype='LD_PRELOAD=/usr/lib64/libv4l/v4l1compat.so skype'
+alias google-chrome-stable='LD_PRELOAD=/usr/lib64/libv4l/v4l1compat.so google-chrome-stable'
 
 set -o vi
 
