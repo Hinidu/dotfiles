@@ -270,6 +270,12 @@ augroup filetype_vim
     autocmd Filetype vim setlocal foldmethod=marker foldlevelstart=0
 augroup end
 
+augroup filetype_tex
+    autocmd!
+    autocmd BufRead,BufNewFile *.tex set filetype=tex
+    autocmd FileType tex setlocal spell spelllang=ru textwidth=80
+augroup end
+
 " FileType-specific settings }}}
 
 
