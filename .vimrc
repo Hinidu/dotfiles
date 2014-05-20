@@ -39,6 +39,7 @@ NeoBundle 'leafo/moonscript-vim'
 
 if has('python')
     NeoBundle 'SirVer/ultisnips'
+    NeoBundle 'honza/vim-snippets'
     NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
             \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
             \ }}
