@@ -274,7 +274,7 @@ augroup end
 augroup filetype_tex
     autocmd!
     autocmd BufRead,BufNewFile *.tex set filetype=tex
-    autocmd FileType tex setlocal spell spelllang=ru textwidth=80
+    autocmd FileType tex setlocal spell spelllang=ru,en textwidth=80
 augroup end
 
 " FileType-specific settings }}}
