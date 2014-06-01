@@ -57,10 +57,10 @@ function! bundle.hooks.on_post_source(bundle)
     silent! execute 'doautocmd Filetype' &filetype
 endfunction
 
-if filereadable('~/sources/vim/acvim')
+if isdirectory(expand('~/sources/vim/acvim'))
     NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
 endif
-if filereadable('~/sources/vim/potion')
+if isdirectory(expand('~/sources/vim/potion'))
     NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
 endif
 
