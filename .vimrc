@@ -49,6 +49,11 @@ if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
 endif
 
+if has('ruby')
+    NeoBundle 'junkblocker/patchreview-vim'
+    NeoBundle 'codegram/vim-codereview'
+endif
+
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
         \ 'mappings' : ['%', 'g%']
         \ }}
