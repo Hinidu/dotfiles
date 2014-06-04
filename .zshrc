@@ -58,6 +58,11 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 # User configuration
 
+if [ ! -d "$ZSH/zsh-completions" ]; then
+    git clone git://github.com/zsh-users/zsh-completions.git $ZSH/zsh-completions
+fi
+fpath=($fpath $ZSH/zsh-completions/src)
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.8.2:/usr/games/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/games/bin:/home/hinidu/bin:/home/hinidu/sources/Java/algs4/bin"
 
 export EDITOR='vim'
