@@ -2,6 +2,11 @@
 
 set nocompatible               " Be iMproved
 
+" Use space as leader key.
+" NOTE: This should be set before any mapping with <leader>.
+" In other case those mappings will use default <leader>.
+let mapleader=" "
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -224,9 +229,6 @@ set colorcolumn=81
 
 
 " Mappings {{{
-
-" Use space as leader key
-let mapleader=" "
 
 " Always use very magic patterns
 nnoremap / /\v
