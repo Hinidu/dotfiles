@@ -30,6 +30,7 @@ NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -41,6 +42,8 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'leafo/moonscript-vim'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-easytags'
 
 if has('python')
     NeoBundle 'SirVer/ultisnips'
@@ -164,6 +167,9 @@ if has('lua')
 endif
 
 let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
+
+let g:easytags_auto_highlight = 0
+let g:easytags_updatetime_warn = 0
 
 " NeoBundle and plugins setup }}}
 
