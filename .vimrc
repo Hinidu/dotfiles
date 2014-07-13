@@ -232,8 +232,9 @@ set clipboard+=autoselectplus
 " Do not use system clipboard in terminal
 set clipboard+=exclude:cons\|linux
 
-" Use nice unicode characters to mark tabs and end of line
-set listchars+=tab:▸\ ,eol:¬
+" Use nice unicode characters to mark tabs and trailing spaces
+set listchars=tab:▸\ ,trail:·
+set list
 
 " Allow to use mouse in all modes
 set mouse=a
