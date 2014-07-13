@@ -185,6 +185,19 @@ set shiftwidth=4
 " Replace tab with tabstop spaces when press <tab> in insert mode
 set expandtab
 
+" Default formatoptions
+set formatoptions=tcroq
+" Automatic formatting of paragraphs
+set formatoptions+=a
+" When formatting test, recognize numbered lists
+set formatoptions+=n
+" Remove a comment leader when joining lines
+set formatoptions+=j
+" Don't break a line after a one-letter word
+set formatoptions+=1
+" A line that ends in a non-white character ends a paragraph
+set formatoptions+=w
+
 " Round indent to multiple of 'shiftwidth'
 set shiftround
 
