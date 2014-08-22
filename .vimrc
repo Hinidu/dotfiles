@@ -239,6 +239,9 @@ set laststatus=2
 " Highlight 81's column
 set colorcolumn=81
 
+" Search by :find, gf, etc. in current directory recursively
+set path+=**
+
 " Settings }}}
 
 
