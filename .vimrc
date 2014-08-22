@@ -24,6 +24,7 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 " My Bundles here: {{{
 
 " Original repos on github
+NeoBundle 'tpope/vim-sensible'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/ListToggle'
@@ -79,14 +80,11 @@ endif
 
 " }}}
 
-filetype plugin indent on     " Required!
-
 " Installation check.
 NeoBundleCheck
 
 
 " Enable solarized {{{
-syntax enable
 set background=dark
 colorscheme solarized
 " }}}
@@ -205,8 +203,6 @@ set shiftround
 
 " Ignore case in search when pattern has no uppercase letters
 set smartcase
-" Highlight the next match while I'm still typing out search pattern
-set incsearch
 
 " Show line numbers relative to current line
 set relativenumber
@@ -214,9 +210,6 @@ set relativenumber
 set number
 " Highlight line under the cursor
 set cursorline
-
-" Show possible matches for command-line completion
-set wildmenu
 
 " Allow to switch to russian keymap with Ctrl-^ in insert mode
 " This change would affect insert mode and search
@@ -234,8 +227,7 @@ set clipboard+=autoselectplus
 " Do not use system clipboard in terminal
 set clipboard+=exclude:cons\|linux
 
-" Use nice unicode characters to mark tabs and trailing spaces
-set listchars=tab:▸\ ,trail:·
+" Use special characters to mark tabs and trailing spaces
 set list
 
 " Allow to use mouse in all modes
