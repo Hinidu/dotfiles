@@ -5,7 +5,6 @@ set nocompatible               " Be iMproved
 " Use space as leader key.
 " NOTE: This should be set before any mapping with <leader>.
 " In other case those mappings will use default <leader>.
-let mapleader=" "
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -47,35 +46,35 @@ NeoBundle 'xolox/vim-easytags'
 NeoBundle 'ledger/vim-ledger'
 
 if has('python')
-    NeoBundle 'SirVer/ultisnips'
-    NeoBundle 'honza/vim-snippets'
-    " NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
-    "         \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer',
-    "         \ }}
+  NeoBundle 'SirVer/ultisnips'
+  NeoBundle 'honza/vim-snippets'
+  " NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+  "     \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer',
+  "     \ }}
 endif
 
 if has('lua')
-    NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'Shougo/neocomplete.vim'
 endif
 
 if has('ruby')
-    NeoBundle 'junkblocker/patchreview-vim'
-    NeoBundle 'codegram/vim-codereview'
+  NeoBundle 'junkblocker/patchreview-vim'
+  NeoBundle 'codegram/vim-codereview'
 endif
 
 NeoBundleLazy 'matchit.zip', { 'autoload' : {
-        \ 'mappings' : ['%', 'g%']
-        \ }}
+    \ 'mappings' : ['%', 'g%']
+    \ }}
 let bundle = neobundle#get('matchit.zip')
 function! bundle.hooks.on_post_source(bundle)
-    silent! execute 'doautocmd Filetype' &filetype
+  silent! execute 'doautocmd Filetype' &filetype
 endfunction
 
 if isdirectory(expand('~/sources/vim/acvim'))
-    NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
+  NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
 endif
 if isdirectory(expand('~/sources/vim/potion'))
-    NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
+  NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
 endif
 
 " }}}
@@ -91,27 +90,27 @@ colorscheme solarized
 
 
 if has('python')
-    " UltiSnips {{{
-    let g:UltiSnipsEditSplit = 'vertical'
-    let g:UltiSnipsExpandTrigger = '<c-j>'
-    " }}}
+  " UltiSnips {{{
+  let g:UltiSnipsEditSplit = 'vertical'
+  let g:UltiSnipsExpandTrigger = '<c-j>'
+  " }}}
 
 
-    " YouCompleteMe {{{
-    " let g:ycm_confirm_extra_conf = 0
-    " let g:ycm_allow_changing_updatetime = 0
-    " let g:ycm_complete_in_comments = 1
-    " let g:ycm_seed_identifiers_with_syntax = 1
-    " nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    " let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
-    " }}}
+  " YouCompleteMe {{{
+  " let g:ycm_confirm_extra_conf = 0
+  " let g:ycm_allow_changing_updatetime = 0
+  " let g:ycm_complete_in_comments = 1
+  " let g:ycm_seed_identifiers_with_syntax = 1
+  " nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+  " let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
+  " }}}
 endif
 
 
 function! NeoCompleteSafeDisable()
-    if exists(':NeoCompleteDisable')
-        NeoCompleteDisable
-    endif
+  if exists(':NeoCompleteDisable')
+    NeoCompleteDisable
+  endif
 endfunction
 
 autocmd FileType c :call NeoCompleteSafeDisable()
@@ -136,18 +135,18 @@ nnoremap <leader>tb :TagbarToggle<CR>
 
 " Tabular {{{
 if exists(":Tabularize")
-    nmap <leader>a=       :Tabularize haskell_bindings<CR>
-    vmap <leader>a=       :Tabularize haskell_bindings<CR>
-    nmap <leader>a<Bar>   :Tabularize /<Bar><CR>
-    vmap <leader>a<Bar>   :Tabularize /<Bar><CR>
-    nmap <leader>a<space> :Tabularize / /l0<CR>
-    vmap <leader>a<space> :Tabularize / /l0<CR>
-    nmap <leader>ai       :Tabularize haskell_imports<CR>
-    vmap <leader>ai       :Tabularize haskell_imports<CR>
-    nmap <leader>ac       :Tabularize haskell_comments<CR>
-    vmap <leader>ac       :Tabularize haskell_comments<CR>
-    nmap <leader>a:       :Tabularize haskell_types<CR>
-    vmap <leader>a:       :Tabularize haskell_types<CR>
+  nmap <leader>a=       :Tabularize haskell_bindings<CR>
+  vmap <leader>a=       :Tabularize haskell_bindings<CR>
+  nmap <leader>a<Bar>   :Tabularize /<Bar><CR>
+  vmap <leader>a<Bar>   :Tabularize /<Bar><CR>
+  nmap <leader>a<space> :Tabularize / /l0<CR>
+  vmap <leader>a<space> :Tabularize / /l0<CR>
+  nmap <leader>ai       :Tabularize haskell_imports<CR>
+  vmap <leader>ai       :Tabularize haskell_imports<CR>
+  nmap <leader>ac       :Tabularize haskell_comments<CR>
+  vmap <leader>ac       :Tabularize haskell_comments<CR>
+  nmap <leader>a:       :Tabularize haskell_types<CR>
+  vmap <leader>a:       :Tabularize haskell_types<CR>
 endif
 " }}}
 
@@ -160,8 +159,8 @@ nnoremap <leader>ti :GhcModTypeInsert<CR>
 nnoremap <leader>tc :GhcModTypeClear<CR>
 
 if has('lua')
-    " neocomplete.vim
-    let g:neocomplete#enable_at_startup = 1
+  " neocomplete.vim
+  let g:neocomplete#enable_at_startup = 1
 endif
 
 let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
@@ -285,15 +284,15 @@ nnoremap <leader>sp :set spell!<cr>
 
 " Function that preserve current state and run some command
 function! PreserveState(command)
-    " Preparation: save last search and cursor position.
-    let _s = @/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    execute a:command
-    " Clean up: restore previous search history and cursor position
-    let @/ = _s
-    call cursor(l, c)
+  " Preparation: save last search and cursor position.
+  let _s = @/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history and cursor position
+  let @/ = _s
+  call cursor(l, c)
 endfunction
 
 " Functions }}}
@@ -302,46 +301,46 @@ endfunction
 " FileType-specific settings {{{
 
 augroup filetype_haskell
-    autocmd!
-    " Backspace remove only one space in beginning of line in haskell sources
-    autocmd Filetype haskell setlocal softtabstop=0
+  autocmd!
+  " Backspace remove only one space in beginning of line in haskell sources
+  autocmd Filetype haskell setlocal softtabstop=0
 augroup end
 
 augroup filetype_vim
-    autocmd!
-    " Fold all markers the first time open the file
-    autocmd Filetype vim setlocal foldmethod=marker foldlevelstart=0
+  autocmd!
+  " Fold all markers the first time open the file
+  autocmd Filetype vim setlocal foldmethod=marker foldlevelstart=0
 augroup end
 
 augroup filetype_tex
-    autocmd!
-    autocmd BufRead,BufNewFile *.tex set filetype=tex
-    autocmd FileType tex setlocal spell spelllang=ru,en textwidth=80
+  autocmd!
+  autocmd BufRead,BufNewFile *.tex set filetype=tex
+  autocmd FileType tex setlocal spell spelllang=ru,en textwidth=80
 augroup end
 
 function! s:LedgerAlign()
-    let curline = line(".")
-    let curcol = col(".")
-    let content = getline(curline)
+  let curline = line(".")
+  let curcol = col(".")
+  let content = getline(curline)
 
-    if content !~ '^\s\+\S.*\S$'
-        return
-    endif
+  if content !~ '^\s\+\S.*\S$'
+    return
+  endif
 
-    let length = len(content)
-    execute '?^\S?+1,/^\s*$/-1 Tabularize /.*\S.*\s\s\+\zs/l1l1r0'
+  let length = len(content)
+  execute '?^\S?+1,/^\s*$/-1 Tabularize /.*\S.*\s\s\+\zs/l1l1r0'
 
-    let new_length = len(getline(curline))
-    if new_length != length
-        let curcol = curcol + new_length - length
-    endif
+  let new_length = len(getline(curline))
+  if new_length != length
+    let curcol = curcol + new_length - length
+  endif
 
-    call cursor(curline, curcol)
+  call cursor(curline, curcol)
 endfunction
 
 augroup filetype_ledger
-    autocmd!
-    autocmd FileType ledger autocmd TextChanged,TextChangedI <buffer> call <SID>LedgerAlign()
+  autocmd!
+  autocmd FileType ledger autocmd TextChanged,TextChangedI <buffer> call <SID>LedgerAlign()
 augroup end
 
 " FileType-specific settings }}}
