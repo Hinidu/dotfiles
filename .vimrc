@@ -186,7 +186,7 @@ set shiftwidth=4
 set expandtab
 
 " Default formatoptions
-set formatoptions=tcroq
+" set formatoptions=tcroq
 " Automatic formatting of paragraphs
 set formatoptions+=a
 " When formatting test, recognize numbered lists
@@ -223,7 +223,7 @@ set noequalalways
 " Use system clipboard for all yank, delete, change and put operations
 set clipboard=unnamedplus
 " Add selection in visual mode to clipboard
-set clipboard+=autoselectplus
+" set clipboard+=autoselectplus
 " Do not use system clipboard in terminal
 set clipboard+=exclude:cons\|linux
 
