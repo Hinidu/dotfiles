@@ -177,11 +177,11 @@ let g:easytags_by_filetype = '~/.vim/tags'
 " Settings {{{
 
 " Tab width is 4 columns
-set tabstop=4
+set tabstop=2
 " Backspace remove up to 4 spaces in beginning of line in insert mode
-set softtabstop=4
+set softtabstop=2
 " < and > commands remove/add 4 spaces to the end of line
-set shiftwidth=4
+set shiftwidth=2
 " Replace tab with tabstop spaces when press <tab> in insert mode
 set expandtab
 
