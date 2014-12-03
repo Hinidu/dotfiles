@@ -4,7 +4,7 @@ URxvt.font: xft:terminus:size=12:autohint=true:antialias=true
 URxvt.perl-ext-common: default,matcher
 URxvt.scrollBar: off
 URxvt.termName: xterm-256color
-URxvt.url-launcher: /usr/bin/google-chrome-stable
+URxvt.url-launcher: chromium
 URxvt.matcher.button: 1
 URxvt.underlineURLs: true
 URxvt.urgentOnBell: true
