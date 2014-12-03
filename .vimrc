@@ -44,6 +44,7 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
+NeoBundle 'ledger/vim-ledger'
 
 if has('python')
     NeoBundle 'SirVer/ultisnips'
@@ -280,6 +281,24 @@ nnoremap <leader>sp :set spell!<cr>
 " Mappings }}}
 
 
+" Functions {{{
+
+" Function that preserve current state and run some command
+function! PreserveState(command)
+    " Preparation: save last search and cursor position.
+    let _s = @/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    execute a:command
+    " Clean up: restore previous search history and cursor position
+    let @/ = _s
+    call cursor(l, c)
+endfunction
+
+" Functions }}}
+
+
 " FileType-specific settings {{{
 
 augroup filetype_haskell
@@ -300,22 +319,29 @@ augroup filetype_tex
     autocmd FileType tex setlocal spell spelllang=ru,en textwidth=80
 augroup end
 
-" FileType-specific settings }}}
+function! s:LedgerAlign()
+    let curline = line(".")
+    let curcol = col(".")
+    let content = getline(curline)
 
+    if content !~ '^\s\+\S.*\S$'
+        return
+    endif
 
-" Functions {{{
+    let length = len(content)
+    execute '?^\S?+1,/^\s*$/-1 Tabularize /.*\S.*\s\s\+\zs/l1l1r0'
 
-" Function that preserve current state and run some command
-function! PreserveState(command)
-    " Preparation: save last search and cursor position.
-    let _s = @/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    execute a:command
-    " Clean up: restore previous search history and cursor position
-    let @/ = _s
-    call cursor(l, c)
+    let new_length = len(getline(curline))
+    if new_length != length
+        let curcol = curcol + new_length - length
+    endif
+
+    call cursor(curline, curcol)
 endfunction
 
-" Functions }}}
+augroup filetype_ledger
+    autocmd!
+    autocmd FileType ledger autocmd TextChanged,TextChangedI <buffer> call <SID>LedgerAlign()
+augroup end
+
+" FileType-specific settings }}}
