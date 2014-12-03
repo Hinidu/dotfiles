@@ -42,7 +42,6 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 " NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
-NeoBundle 'leafo/moonscript-vim'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 
