@@ -40,7 +40,7 @@ NeoBundle 'matze/vim-move'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'eagletmt/neco-ghc'
+" NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'leafo/moonscript-vim'
 NeoBundle 'xolox/vim-misc'
@@ -49,9 +49,9 @@ NeoBundle 'xolox/vim-easytags'
 if has('python')
     NeoBundle 'SirVer/ultisnips'
     NeoBundle 'honza/vim-snippets'
-    NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
-            \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang --omnisharp-completer',
-            \ }}
+    " NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
+    "         \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer',
+    "         \ }}
 endif
 
 if has('lua')
@@ -98,12 +98,12 @@ if has('python')
 
 
     " YouCompleteMe {{{
-    let g:ycm_confirm_extra_conf = 0
-    let g:ycm_allow_changing_updatetime = 0
-    let g:ycm_complete_in_comments = 1
-    let g:ycm_seed_identifiers_with_syntax = 1
-    nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
+    " let g:ycm_confirm_extra_conf = 0
+    " let g:ycm_allow_changing_updatetime = 0
+    " let g:ycm_complete_in_comments = 1
+    " let g:ycm_seed_identifiers_with_syntax = 1
+    " nnoremap <localleader>gt :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    " let g:ycm_filetype_whitelist = { 'c': 1, 'cpp': 1, 'cs': 1, 'python': 1 }
     " }}}
 endif
 
