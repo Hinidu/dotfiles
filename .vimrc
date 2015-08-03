@@ -19,6 +19,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Recommended to install
 NeoBundle 'Shougo/vimproc', { 'build' : {
         \ 'unix' : 'make -f make_unix.mak',
+        \ 'windows' : 'tools\\update-dll-mingw',
         \ }}
 
 " My Bundles here: {{{
