@@ -81,6 +81,7 @@ manageHook' = composeAll
     , title =? "zathura"                  --> doShift "read"
     , title =? "cmus"                     --> doShift "mus"
     , className =? "Gxmessage"            --> doFloat
+    , className =? "mpv"                  --> doFloat
     , title =? "xmessage"                 --> doFloat
     ]
 
