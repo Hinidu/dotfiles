@@ -401,6 +401,8 @@ set colorcolumn=81
 " Search by :find, gf, etc. in current directory recursively
 set path+=**
 
+set encoding=utf-8
+
 " Settings }}}
 
 
