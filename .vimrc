@@ -46,6 +46,7 @@ NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'ledger/vim-ledger'
 NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'exu/pgsql.vim'
 
 if has('python')
   NeoBundle 'SirVer/ultisnips'
@@ -220,6 +221,8 @@ let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 let g:easytags_auto_highlight = 0
 let g:easytags_async = 1
 let g:easytags_by_filetype = '~/.vim/tags'
+
+let g:sql_type_default = 'pgsql'
 
 " NeoBundle and plugins setup }}}
 
