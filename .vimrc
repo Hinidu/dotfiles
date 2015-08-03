@@ -110,16 +110,16 @@ if has('python')
 endif
 
 
-function! NeoCompleteSafeDisable()
-  if exists(':NeoCompleteDisable')
-    NeoCompleteDisable
-  endif
-endfunction
-
-autocmd FileType c :call NeoCompleteSafeDisable()
-autocmd FileType cpp :call NeoCompleteSafeDisable()
-autocmd FileType cs :call NeoCompleteSafeDisable()
-autocmd FileType python :call NeoCompleteSafeDisable()
+" function! NeoCompleteSafeDisable()
+"   if exists(':NeoCompleteDisable')
+"     NeoCompleteDisable
+"   endif
+" endfunction
+"
+" autocmd FileType c :call NeoCompleteSafeDisable()
+" autocmd FileType cpp :call NeoCompleteSafeDisable()
+" autocmd FileType cs :call NeoCompleteSafeDisable()
+" autocmd FileType python :call NeoCompleteSafeDisable()
 
 
 " syntastic  {{{
