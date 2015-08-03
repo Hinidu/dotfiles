@@ -74,7 +74,7 @@ startupHook' = do
 
 manageHook' = composeAll
     [ title =? "mcabber"                  --> doShift "im"
-    , className =? "Google-chrome-stable" --> doShift "web"
+    , className =? "Chromium"             --> doShift "web"
     , className =? "Uzbl-tabbed"          --> doShift "web"
     , className =? "Uzbl-browser"         --> doShift "web"
     , title =? "vim"                      --> doShift "dev"
@@ -107,8 +107,8 @@ keys' =
 keysP' =
     [ ("M-S-l", spawn "light-locker-command --lock")
     , ("M-x w", spawn "uzbl-tabbed")
-    , ("M-x c", spawn "google-chrome-stable")
-    , ("M-x x", spawn "google-chrome-stable --incognito")
+    , ("M-x c", spawn "chromium")
+    , ("M-x x", spawn "chromium --incognito")
     , ("M-x i", spawn $ terminal' ++ " -e bash -i -c mcabber")
     , ("M-x v", spawn $ terminal' ++ " -e bash -i -c vim")
     , ("M-x m", spawn $ terminal' ++ " -e bash -i -c cmus")
