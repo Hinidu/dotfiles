@@ -52,6 +52,92 @@ if has('python')
   NeoBundle 'SirVer/ultisnips'
   NeoBundle 'honza/vim-snippets'
   NeoBundle 'davidhalter/jedi-vim'
+  NeoBundle 'OmniSharp/omnisharp-vim', { 'build' : {
+    \ 'windows' : 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe server\\OmniSharp.sln',
+    \ }}
+
+  let g:OmniSharp_selector_ui = 'unite'
+
+  "don't autoselect first item in omnicomplete, show if only one item (for 
+  "preview)
+  "remove preview if you don't want to see any documentation whatsoever.
+  set completeopt=longest,menuone,preview
+  " Fetch full documentation during omnicomplete requests.
+  " There is a performance penalty with this (especially on Mono)
+  " By default, only Type/Method signatures are fetched. Full documentation can still be fetched when
+  " you need it with the :OmniSharpDocumentation command.
+  let g:omnicomplete_fetch_documentation=1
+
+  "Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
+  "You might also want to look at the echodoc plugin
+  set splitbelow
+
+  " Get Code Issues and syntax errors
+  let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+  " If you are using the omnisharp-roslyn backend, use the following
+  " let g:syntastic_cs_checkers = ['code_checker']
+  augroup omnisharp_commands
+      autocmd!
+
+      "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
+      autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+      " Synchronous build (blocks Vim)
+      "autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
+      " Builds can also run asynchronously with vim-dispatch installed
+      autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
+      " automatic syntax check on events (TextChanged requires Vim 7.4)
+      autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
+
+      " Automatically add new cs files to the nearest project on save
+      autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+
+      "show type information automatically when the cursor stops moving
+      autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+
+      "The following commands are contextual, based on the current cursor position.
+
+      autocmd FileType cs nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
+      autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
+      autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
+      autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
+      autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
+      "finds members in the current buffer
+      autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr>
+      " cursor can be anywhere on the line containing an issue
+      autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
+      autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
+      autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
+      autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
+      "navigate up by method/property/field
+      autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
+      "navigate down by method/property/field
+      autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
+
+      " Contextual code actions (requires CtrlP or unite.vim)
+      autocmd FileType cs nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
+      " Run code actions with text selected in visual mode to extract method
+      autocmd FileType cs vnoremap <leader><space> :call OmniSharp#GetCodeActions('visual')<cr>
+
+      " rename with dialog
+      autocmd FileType cs nnoremap <leader>rn :OmniSharpRename<cr>
+      " rename without dialog - with cursor on the symbol to rename...  ':Rename newname'
+      autocmd FileType cs command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
+
+      " Force OmniSharp to reload the solution. Useful when switching branches etc.
+      autocmd FileType cs nnoremap <leader>rl :OmniSharpReloadSolution<cr>
+      autocmd FileType cs nnoremap <leader>cf :OmniSharpCodeFormat<cr>
+      " Load the current .cs file to the nearest project
+      autocmd FileType cs nnoremap <leader>tp :OmniSharpAddToProject<cr>
+
+      " (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
+      autocmd FileType cs nnoremap <leader>ss :OmniSharpStartServer<cr>
+      autocmd FileType cs nnoremap <leader>sp :OmniSharpStopServer<cr>
+
+      " Add syntax highlighting for types and interfaces
+      autocmd FileType cs nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+  augroup END
+
   " NeoBundle 'Valloric/YouCompleteMe', { 'build' : {
   "     \ 'unix' : '~/.vim/bundle/YouCompleteMe/install.sh --clang-completer',
   "     \ }}
