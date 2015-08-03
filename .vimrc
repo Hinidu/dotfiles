@@ -5,6 +5,7 @@ set nocompatible               " Be iMproved
 " Use space as leader key.
 " NOTE: This should be set before any mapping with <leader>.
 " In other case those mappings will use default <leader>.
+let mapleader = ' '
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
