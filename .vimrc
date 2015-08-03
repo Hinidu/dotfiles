@@ -48,6 +48,7 @@ NeoBundle 'xolox/vim-easytags'
 NeoBundle 'ledger/vim-ledger'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'exu/pgsql.vim'
+NeoBundle 'saltstack/salt-vim'
 
 if has('python')
   NeoBundle 'SirVer/ultisnips'
