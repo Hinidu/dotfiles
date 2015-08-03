@@ -11,7 +11,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -79,6 +79,8 @@ if isdirectory(expand('~/sources/vim/potion'))
 endif
 
 " }}}
+
+call neobundle#end()
 
 " Installation check.
 NeoBundleCheck
