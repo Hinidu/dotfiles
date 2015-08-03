@@ -45,6 +45,7 @@ NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'ledger/vim-ledger'
+NeoBundle 'tpope/vim-dispatch'
 
 if has('python')
   NeoBundle 'SirVer/ultisnips'
