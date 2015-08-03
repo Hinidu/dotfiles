@@ -22,8 +22,6 @@ export PS1="\[\033[1;35m\][\u\[\033[0m\] \[\033[1;37m\]\w]\[\033[0m\]\[\033[1;31
 
 export EDITOR="vim"
 
-export VIMRUNTIME=/usr/share/vim/vim74
-
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
 test -r ~/sources/Java/algs4/bin/config.sh && source ~/sources/Java/algs4/bin/config.sh
