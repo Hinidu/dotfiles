@@ -49,6 +49,10 @@ NeoBundle 'ledger/vim-ledger'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'exu/pgsql.vim'
 NeoBundle 'saltstack/salt-vim'
+NeoBundle 'vim-erlang/vim-erlang-runtime'
+NeoBundle 'vim-erlang/vim-erlang-compiler'
+NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
+NeoBundle 'vim-erlang/vim-erlang-tags'
 
 if has('python')
   NeoBundle 'SirVer/ultisnips'
@@ -312,6 +316,11 @@ if has('lua')
   let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
   let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
   let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
+
+  if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_omni_input_patterns.erlang = '\<[[:digit:][:alnum:]_-]\+:[[:digit:][:alnum:]_-]*'
   " }}}
 endif
 
