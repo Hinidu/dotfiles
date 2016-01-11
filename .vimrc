@@ -102,6 +102,21 @@ colorscheme solarized
 " }}}
 
 
+" {{{ Unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+let s:unite_sorters = ['sorter_word']
+if has('python')
+  call add(s:unite_sorters, 'sorter_selecta')
+endif
+call unite#filters#sorter_default#use(s:unite_sorters)
+
+nnoremap <leader>ur :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <leader>ub :<C-u>Unite -start-insert buffer<CR>
+nnoremap <leader>ut :<C-u>Unite -start-insert tag<CR>
+" }}} Unite
+
+
 if has('python')
   " UltiSnips {{{
   let g:UltiSnipsEditSplit = 'vertical'
