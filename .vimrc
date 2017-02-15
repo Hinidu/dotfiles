@@ -1,99 +1,91 @@
-" NeoBundle and plugins setup {{{
+" dein and plugins setup {{{
 
-set nocompatible               " Be iMproved
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
 " Use space as leader key.
 " NOTE: This should be set before any mapping with <leader>.
 " In other case those mappings will use default <leader>.
 let mapleader = ' '
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.vim/bundle/')
+  call dein#begin('~/.vim/bundle/')
+
+  call dein#add('Shougo/dein.vim')
+
+  call dein#add('Shougo/vimproc', {'build': 'make'})
+
+  " Original repos on github
+  call dein#add('tpope/vim-sensible')
+  call dein#add('altercation/vim-colors-solarized')
+  " call dein#add('scrooloose/syntastic')
+  call dein#add('w0rp/ale')
+  call dein#add('Valloric/ListToggle')
+  call dein#add('tomtom/tcomment_vim')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('tsukkee/unite-tag')
+  call dein#add('bling/vim-airline')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-eunuch')
+  call dein#add('matze/vim-move')
+  call dein#add('godlygeek/tabular')
+  call dein#add('dag/vim2hs')
+  call dein#add('eagletmt/ghcmod-vim')
+  " call dein#add('eagletmt/neco-ghc')
+  call dein#add('MarcWeber/vim-addon-local-vimrc')
+  call dein#add('xolox/vim-misc')
+  call dein#add('xolox/vim-easytags')
+  call dein#add('ledger/vim-ledger')
+  call dein#add('tpope/vim-dispatch')
+  call dein#add('exu/pgsql.vim')
+  call dein#add('saltstack/salt-vim')
+  call dein#add('vim-erlang/vim-erlang-runtime')
+  call dein#add('vim-erlang/vim-erlang-compiler')
+  call dein#add('vim-erlang/vim-erlang-omnicomplete')
+  call dein#add('vim-erlang/vim-erlang-tags')
+  call dein#add('ElmCast/elm-vim')
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('mxw/vim-jsx')
+
+  if has('python')
+    call dein#add('SirVer/ultisnips')
+    call dein#add('honza/vim-snippets')
+    call dein#add('davidhalter/jedi-vim')
+    " call dein#add('OmniSharp/omnisharp-vim', { 'build' : {
+    "   \ 'unix' : 'xbuild /p:Configuration=Release /p:Platform=x86 server/OmniSharp.sln',
+    "   \ 'windows' : 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe server\\OmniSharp.sln',
+    "   \ }})
+  endif
+
+  if has('lua')
+    call dein#add('Shougo/neocomplete.vim')
+  endif
+
+  if has('ruby')
+    call dein#add('junkblocker/patchreview-vim')
+    call dein#add('codegram/vim-codereview')
+  endif
+
+  " NeoBundleLazy 'matchit.zip', { 'autoload' : {
+  "     \ 'mappings' : ['%', 'g%']
+  "     \ }}
+  " let bundle = neobundle#get('matchit.zip')
+  " function! bundle.hooks.on_post_source(bundle)
+  "   silent! execute 'doautocmd Filetype' &filetype
+  " endfunction
+
+  call dein#end()
+  call dein#save_state()
+
+  if dein#check_install()
+    call dein#install()
+  endif
 endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Recommended to install
-NeoBundle 'Shougo/vimproc', { 'build' : {
-        \ 'unix' : 'make -f make_unix.mak',
-        \ 'windows' : 'tools\\update-dll-mingw',
-        \ }}
-
-" My Bundles here: {{{
-
-" Original repos on github
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Valloric/ListToggle'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'tsukkee/unite-tag'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'matze/vim-move'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim'
-" NeoBundle 'eagletmt/neco-ghc'
-NeoBundle 'MarcWeber/vim-addon-local-vimrc'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
-NeoBundle 'ledger/vim-ledger'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'exu/pgsql.vim'
-NeoBundle 'saltstack/salt-vim'
-NeoBundle 'vim-erlang/vim-erlang-runtime'
-NeoBundle 'vim-erlang/vim-erlang-compiler'
-NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
-NeoBundle 'vim-erlang/vim-erlang-tags'
-
-if has('python')
-  NeoBundle 'SirVer/ultisnips'
-  NeoBundle 'honza/vim-snippets'
-  NeoBundle 'davidhalter/jedi-vim'
-  NeoBundle 'OmniSharp/omnisharp-vim', { 'build' : {
-    \ 'unix' : 'xbuild /p:Configuration=Release /p:Platform=x86 server/OmniSharp.sln',
-    \ 'windows' : 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe server\\OmniSharp.sln',
-    \ }}
-endif
-
-if has('lua')
-  NeoBundle 'Shougo/neocomplete.vim'
-endif
-
-if has('ruby')
-  NeoBundle 'junkblocker/patchreview-vim'
-  NeoBundle 'codegram/vim-codereview'
-endif
-
-NeoBundleLazy 'matchit.zip', { 'autoload' : {
-    \ 'mappings' : ['%', 'g%']
-    \ }}
-let bundle = neobundle#get('matchit.zip')
-function! bundle.hooks.on_post_source(bundle)
-  silent! execute 'doautocmd Filetype' &filetype
-endfunction
-
-if isdirectory(expand('~/sources/vim/acvim'))
-  NeoBundle '~/sources/vim/acvim', { 'type' : 'nosync' }
-endif
-if isdirectory(expand('~/sources/vim/potion'))
-  NeoBundle '~/sources/vim/potion', { 'type' : 'nosync' }
-endif
-
-" }}}
-
-call neobundle#end()
-
-" Installation check.
-NeoBundleCheck
 
 
 " Enable solarized {{{
@@ -173,7 +165,7 @@ if has('python')
     " Builds can also run asynchronously with vim-dispatch installed
     autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
     " automatic syntax check on events (TextChanged requires Vim 7.4)
-    autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
+    " autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
 
     " Automatically add new cs files to the nearest project on save
     autocmd BufWritePost *.cs call OmniSharp#AddToProject()
@@ -348,7 +340,7 @@ let g:easytags_by_filetype = '~/.vim/tags'
 
 let g:sql_type_default = 'pgsql'
 
-" NeoBundle and plugins setup }}}
+" dein and plugins setup }}}
 
 
 " Settings {{{
