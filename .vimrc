@@ -55,6 +55,10 @@ if dein#load_state('~/.vim/bundle/')
   " vim-scripts repos on github
   call dein#add('matchit.zip')
 
+  if has('python3')
+    call dein#add('Shougo/denite.nvim')
+  endif
+
   if has('python') || has('python3')
     call dein#add('SirVer/ultisnips')
     call dein#add('honza/vim-snippets')
@@ -110,6 +114,25 @@ nnoremap <leader>ur :<C-u>Unite -start-insert file_rec/async:!<CR>
 nnoremap <leader>ub :<C-u>Unite -start-insert buffer<CR>
 nnoremap <leader>ut :<C-u>Unite -start-insert tag<CR>
 " }}} Unite
+
+
+" {{{ denite
+if has('python3')
+  call denite#custom#var('file_rec', 'command',
+    \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
+
+  call denite#custom#var('grep', 'command', ['pt'])
+  call denite#custom#var('grep', 'default_opts',
+    \ ['--nogroup', '--nocolor', '--smart-case'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'final_opts', [])
+
+  nnoremap <leader>df :<C-u>Denite file_rec<CR>
+  nnoremap <leader>db :<C-u>Denite buffer<CR>
+endif
+" }}} denite
 
 
 if has('python') || has('python3')
