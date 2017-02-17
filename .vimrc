@@ -52,6 +52,9 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
 
+  " vim-scripts repos on github
+  call dein#add('matchit.zip')
+
   if has('python') || has('python3')
     call dein#add('SirVer/ultisnips')
     call dein#add('honza/vim-snippets')
