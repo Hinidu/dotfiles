@@ -52,7 +52,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
 
-  if has('python')
+  if has('python') || has('python3')
     call dein#add('SirVer/ultisnips')
     call dein#add('honza/vim-snippets')
     call dein#add('davidhalter/jedi-vim')
@@ -98,7 +98,7 @@ colorscheme solarized
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 let s:unite_sorters = ['sorter_word']
-if has('python')
+if has('python') || has('python3')
   call add(s:unite_sorters, 'sorter_selecta')
 endif
 call unite#filters#sorter_default#use(s:unite_sorters)
@@ -109,7 +109,7 @@ nnoremap <leader>ut :<C-u>Unite -start-insert tag<CR>
 " }}} Unite
 
 
-if has('python')
+if has('python') || has('python3')
   " UltiSnips {{{
   let g:UltiSnipsEditSplit = 'vertical'
   let g:UltiSnipsExpandTrigger = '<c-j>'
