@@ -446,6 +446,10 @@ set path+=**
 
 set encoding=utf-8
 
+if has('nvim')
+  set inccommand=nosplit
+endif
+
 " Settings }}}
 
 
