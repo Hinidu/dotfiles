@@ -19,8 +19,13 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('Shougo/vimproc', {'build': 'make'})
 
   " Original repos on github
+  if has('nvim')
+    call dein#add('frankier/neovim-colors-solarized-truecolor-only')
+    call dein#add('equalsraf/neovim-gui-shim')
+  else
+    call dein#add('altercation/vim-colors-solarized')
+  endif
   call dein#add('tpope/vim-sensible')
-  call dein#add('altercation/vim-colors-solarized')
   " call dein#add('scrooloose/syntastic')
   call dein#add('w0rp/ale')
   call dein#add('Valloric/ListToggle')
