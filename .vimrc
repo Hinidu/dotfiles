@@ -425,7 +425,9 @@ set clipboard=unnamedplus
 " Add selection in visual mode to clipboard
 " set clipboard+=autoselectplus
 " Do not use system clipboard in terminal
-set clipboard+=exclude:cons\|linux
+if !has('nvim')
+  set clipboard+=exclude:cons\|linux
+endif
 
 " Use special characters to mark tabs and trailing spaces
 set list
