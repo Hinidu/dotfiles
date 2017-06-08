@@ -58,7 +58,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('mxw/vim-jsx')
 
   " vim-scripts repos on github
-  call dein#add('matchit.zip')
+  call dein#add('vim-scripts/matchit.zip')
 
   if has('python3')
     call dein#add('Shougo/denite.nvim')
