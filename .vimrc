@@ -141,6 +141,7 @@ if has('python3')
 
   nnoremap <leader>df :<C-u>Denite file_rec<CR>
   nnoremap <leader>db :<C-u>Denite buffer<CR>
+  nnoremap <leader>dg :<C-u>Denite grep<CR>
 endif
 " }}} denite
 
