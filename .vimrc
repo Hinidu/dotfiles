@@ -49,7 +49,6 @@ if dein#load_state('~/.vim/bundle/')
   " call dein#add('eagletmt/neco-ghc')
   call dein#add('MarcWeber/vim-addon-local-vimrc')
   call dein#add('xolox/vim-misc')
-  call dein#add('xolox/vim-easytags')
   call dein#add('ledger/vim-ledger')
   call dein#add('tpope/vim-dispatch')
   call dein#add('exu/pgsql.vim')
@@ -64,6 +63,10 @@ if dein#load_state('~/.vim/bundle/')
 
   " vim-scripts repos on github
   call dein#add('vim-scripts/matchit.zip')
+
+  if !has('nvim')
+    call dein#add('xolox/vim-easytags')
+  endif
 
   if has('python3')
     call dein#add('Shougo/denite.nvim')
@@ -371,9 +374,11 @@ endif
 let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 
 " easytags
-let g:easytags_auto_highlight = 0
-let g:easytags_async = 1
-let g:easytags_by_filetype = '~/.vim/tags'
+if !has('nvim')
+  let g:easytags_auto_highlight = 0
+  let g:easytags_async = 1
+  let g:easytags_by_filetype = '~/.vim/tags'
+endif
 
 let g:sql_type_default = 'pgsql'
 
