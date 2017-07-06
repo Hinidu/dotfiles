@@ -9,6 +9,11 @@ endif
 " In other case those mappings will use default <leader>.
 let mapleader = ' '
 
+if has('nvim') && has('win32')
+  let g:python_host_prog='C:\\Python27\\python.exe'
+  let g:python3_host_prog='C:\\Python34\\python.exe'
+endif
+
 set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.vim/bundle/')
