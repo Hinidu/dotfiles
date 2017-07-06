@@ -269,6 +269,12 @@ let g:syntastic_full_redraws = 0
 set updatetime=500
 " }}}
 
+
+" ale  {{{
+let g:ale_python_mypy_options = '--check-untyped-defs --ignore-missing-imports'
+" }}}
+
+
 " move
 let g:move_key_modifier = 'C'
 
