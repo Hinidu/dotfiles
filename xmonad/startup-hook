@@ -4,3 +4,7 @@
 sleep 0.3
 
 xrandr | grep -q 'VGA-1' && dualhead
+
+if [ -e "$HOME/.fehbg" ]; then
+  source "$HOME/.fehbg"
+fi
