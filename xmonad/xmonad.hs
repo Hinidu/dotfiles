@@ -43,9 +43,9 @@ workspaces' = ["im", "web", "term", "dev", "any", "read", "video", "mus", "unkno
 
 myBar = "xmobar"
 
-myLeftBar = myBar ++ " -x 1 .xmobarrc.left"
+myLeftBar = myBar ++ " -x 0 .xmobarrc.left"
 
-myRightBar = myBar ++ " -x 0 .xmobarrc.right"
+myRightBar = myBar ++ " -x 1 .xmobarrc.right"
 
 myPP = xmobarPP { ppCurrent = xmobarColor "#859900" "" . wrap "<" ">"
                 , ppUrgent = xmobarColor "#dc322f" "" . wrap "[" "]" . xmobarStrip
