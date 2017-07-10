@@ -395,6 +395,9 @@ let g:sql_type_default = 'pgsql'
 
 " Settings {{{
 
+filetype plugin on
+syntax on
+
 " Tab width is 4 columns
 set tabstop=2
 " Backspace remove up to 4 spaces in beginning of line in insert mode
