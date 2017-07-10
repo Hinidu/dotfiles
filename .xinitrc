@@ -2,14 +2,13 @@ xrdb -merge .Xresources
 
 xsetroot -cursor_name left_ptr
 
-if [ -e /usr/bin/feh ] && [ -e $HOME/.fehbg ]
-	then source "$HOME/.fehbg"
-	#then feh --bg-max "`find "/home/hinidu/photo" -type f -name "*.jpg" | shuf -n 1`"
+if type feh &> /dev/null && [ -e $HOME/.fehbg ]; then
+  source "$HOME/.fehbg"
 fi
 
-if hash VBoxClient 2>/dev/null; then
-    VBoxClient --clipboard
-    VBoxClient --display
+if type VBoxClient &> /dev/null; then
+  VBoxClient --clipboard
+  VBoxClient --display
 fi
 
 exec ck-launch-session xmonad
