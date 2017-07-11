@@ -29,7 +29,9 @@ if dein#load_state('~/.vim/bundle/')
   else
     call dein#add('altercation/vim-colors-solarized')
   endif
-  call dein#add('tpope/vim-sensible')
+  if !has('nvim')
+    call dein#add('tpope/vim-sensible')
+  endif
   call dein#add('w0rp/ale')
   call dein#add('tomtom/tcomment_vim')
   call dein#add('majutsushi/tagbar')
