@@ -55,6 +55,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('ElmCast/elm-vim')
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
+  call dein#add('airblade/vim-gitgutter')
 
   " vim-scripts repos on github
   call dein#add('vim-scripts/matchit.zip')
