@@ -24,7 +24,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('Shougo/vimproc', {'build': 'make'})
 
   " Original repos on github
-  if has('nvim')
+  if has('nvim') && has('win32')
     call dein#add('frankier/neovim-colors-solarized-truecolor-only')
     call dein#add('equalsraf/neovim-gui-shim')
   else
