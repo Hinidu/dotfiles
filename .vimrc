@@ -24,9 +24,8 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('Shougo/vimproc', {'build': 'make'})
 
   " Original repos on github
-  if has('nvim') && has('win32')
-    call dein#add('frankier/neovim-colors-solarized-truecolor-only')
-    call dein#add('equalsraf/neovim-gui-shim')
+  if has('nvim')
+    call dein#add('iCyMind/NeoSolarized')
   else
     call dein#add('altercation/vim-colors-solarized')
   endif
@@ -112,7 +111,11 @@ endif
 
 " Enable solarized {{{
 set background=dark
-colorscheme solarized
+if has('nvim')
+  colorscheme NeoSolarized
+else
+  colorscheme solarized
+endif
 " }}}
 
 
