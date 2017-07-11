@@ -106,6 +106,8 @@ if dein#load_state('~/.vim/bundle/')
   if dein#check_install()
     call dein#install()
   endif
+
+  call dein#remote_plugins()
 endif
 
 
