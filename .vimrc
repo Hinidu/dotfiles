@@ -452,7 +452,7 @@ set clipboard=unnamedplus
 " Add selection in visual mode to clipboard
 " set clipboard+=autoselectplus
 " Do not use system clipboard in terminal
-if !has('win32')
+if !has('win32') && !has('nvim')
   set clipboard+=exclude:cons\|linux
 endif
 
