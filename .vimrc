@@ -149,6 +149,7 @@ if has('python3')
   " Open Denite buffer in normal mode
   call denite#custom#option('default', 'mode', 'normal')
 
+  nnoremap <leader>dr :<C-u>Denite -resume<CR>
   nnoremap <leader>df :<C-u>Denite file_rec<CR>
   nnoremap <leader>db :<C-u>Denite buffer<CR>
   nnoremap <leader>dg :<C-u>Denite grep<CR>
