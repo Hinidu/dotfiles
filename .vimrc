@@ -136,7 +136,7 @@ nnoremap <leader>ut :<C-u>Unite -start-insert tag<CR>
 " {{{ denite
 if has('python3')
   call denite#custom#var('file_rec', 'command',
-    \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
+    \ ['pt', '--follow', '--nocolor', '--nogroup', '-g=', ''])
 
   call denite#custom#var('grep', 'command', ['pt'])
   call denite#custom#var('grep', 'default_opts',
