@@ -146,6 +146,9 @@ if has('python3')
   call denite#custom#var('grep', 'separator', ['--'])
   call denite#custom#var('grep', 'final_opts', [])
 
+  " Open Denite buffer in normal mode
+  call denite#custom#option('default', 'mode', 'normal')
+
   nnoremap <leader>df :<C-u>Denite file_rec<CR>
   nnoremap <leader>db :<C-u>Denite buffer<CR>
   nnoremap <leader>dg :<C-u>Denite grep<CR>
