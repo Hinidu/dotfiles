@@ -58,6 +58,8 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('hashivim/vim-terraform')
+  call dein#add('juliosueiras/vim-terraform-completion')
 
   " vim-scripts repos on github
   call dein#add('vim-scripts/matchit.zip')
