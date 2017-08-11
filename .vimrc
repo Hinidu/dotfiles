@@ -82,6 +82,11 @@ if dein#load_state('~/.vim/bundle/')
     "   \ }})
   endif
 
+  if has('python3') && has('nvim')
+    call dein#add('Shougo/deoplete.nvim')
+    call dein#add('Shougo/neco-vim')
+  endif
+
   if has('lua')
     call dein#add('Shougo/neocomplete.vim')
   endif
@@ -317,6 +322,10 @@ let g:haskell_conceal_enumerations = 0
 nnoremap <leader>tt :GhcModType<CR>
 nnoremap <leader>ti :GhcModTypeInsert<CR>
 nnoremap <leader>tc :GhcModTypeClear<CR>
+
+if dein#is_sourced('deoplete.nvim')
+  let g:deoplete#enable_at_startup = 1
+endif
 
 if has('lua')
   " neocomplete.vim {{{
