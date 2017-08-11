@@ -84,6 +84,7 @@ if dein#load_state('~/.vim/bundle/')
 
   if has('python3') && has('nvim')
     call dein#add('Shougo/deoplete.nvim')
+    call dein#add('Shougo/neco-syntax')
     call dein#add('Shougo/neco-vim')
   endif
 
