@@ -326,6 +326,16 @@ nnoremap <leader>tc :GhcModTypeClear<CR>
 
 if dein#is_sourced('deoplete.nvim')
   let g:deoplete#enable_at_startup = 1
+
+  let g:deoplete#omni_patterns = {}
+  let g:deoplete#omni_patterns.elixir = [
+    \'[^. \t]\.\w*',
+    \'^\s*alias\s*\w*',
+    \'^\s*import\s*\w*',
+    \'^\s*require\s*\w*',
+    \'^\s*use\s*\w*',
+    \'^defmodule\s*\w*',
+    \]
 endif
 
 if has('lua')
