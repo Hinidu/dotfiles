@@ -91,7 +91,7 @@ keys' =
         | (key, scr) ← zip [xK_w, xK_e, xK_r] [0..]
     , (φ, mask)  ← [(viewScreen, 0), (sendToScreen, shiftMask)]]
     ++
-    [ ((modMask' .|. shiftMask, xK_space), spawn $ terminal' ++ " -e bash -i -c vifm")
+    [ ((modMask' .|. shiftMask, xK_space), spawn $ terminal' ++ " -e fish -i -c vifm")
     , ((0, xK_Print), spawn "scrot -e 'mv $f ~/shots/; scrot-loader ~/shots/$n'")
     , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/shots/; scrot-loader ~/shots/$n'")
     , ((modMask', xK_Print), spawn "sleep 0.2; scrot -b -e 'mv $f ~/shots/; scrot-loader ~/shots/$n'")
