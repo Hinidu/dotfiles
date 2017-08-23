@@ -1,9 +1,6 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-# Run ssh-agent and authorize my public key
-. $HOME/.ssh/ssh-login
-
 PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/games/bin:$HOME/bin"
 
 alias ls='ls --color=auto'
