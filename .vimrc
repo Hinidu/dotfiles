@@ -166,6 +166,14 @@ if has('python3')
 endif
 " }}} denite
 
+" {{{ fugitive
+if dein#is_sourced('vim-fugitive')
+  nnoremap <leader>gs :<C-u>Gstatus<CR>
+  nnoremap <leader>gpl :<C-u>Gpull<CR>
+  nnoremap <leader>gps :<C-u>Gpush<CR>
+endif
+" }}} fugitive
+
 
 if has('python') || has('python3')
   " UltiSnips {{{
