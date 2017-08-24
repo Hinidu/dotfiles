@@ -346,6 +346,10 @@ if dein#is_sourced('deoplete.nvim')
     \]
 endif
 
+if dein#is_sourced('alchemist.vim')
+  let g:alchemist#elixir_erlang_src = '/home/hinidu/sources'
+endif
+
 if has('lua')
   " neocomplete.vim {{{
   " Disable AutoComplPop.
