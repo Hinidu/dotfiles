@@ -142,7 +142,8 @@ if has('python3')
   call denite#custom#var('file_rec', 'command', ['rg', '--files', ''])
 
   call denite#custom#var('grep', 'command', ['rg'])
-  call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+  let rg_opts = ['--vimgrep', '--no-heading', '--smart-case']
+  call denite#custom#var('grep', 'default_opts', rg_opts)
   call denite#custom#var('grep', 'recursive_opts', [])
   call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
   call denite#custom#var('grep', 'separator', ['--'])
