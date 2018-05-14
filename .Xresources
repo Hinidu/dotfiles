@@ -1,6 +1,6 @@
 Xcursor.theme: pGentoo-24
 
-URxvt.font: xft:terminus:size=12:autohint=true:antialias=true
+URxvt.font: xft:Source Code Pro:size=10:autohint=true:antialias=true
 URxvt.perl-ext-common: default,matcher
 URxvt.scrollBar: off
 URxvt.termName: xterm-256color
