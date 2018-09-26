@@ -39,7 +39,7 @@ modMask' = mod4Mask
 
 terminal' = "urxvt"
 
-workspaces' = ["im", "web", "term", "dev", "any", "read", "video", "mus", "unknown"]
+workspaces' = ["im", "web", "term", "dev", "unity", "read", "video", "mus", "unknown"]
 
 myBar = "xmobar"
 
@@ -73,17 +73,15 @@ startupHook' = do
     spawn "~/.xmonad/startup-hook"
 
 manageHook' = composeAll
-    [ title =? "mcabber"                  --> doShift "im"
-    , className =? "Chromium"             --> doShift "web"
-    , className =? "Uzbl-tabbed"          --> doShift "web"
-    , className =? "Uzbl-browser"         --> doShift "web"
-    , title =? "vim"                      --> doShift "dev"
-    , title =? "zathura"                  --> doShift "read"
-    , title =? "cmus"                     --> doShift "mus"
-    , className =? "Gxmessage"            --> doFloat
-    , className =? "Kodi"                 --> doFloat
-    , className =? "mpv"                  --> doFloat
-    , title =? "xmessage"                 --> doFloat
+    [ className =? "slack"            --> doShift "im"
+    , className =? "chromium-browser" --> doShift "web"
+    , className =? "Unity"            --> doShift "unity"
+    , title =? "zathura"              --> doShift "read"
+    , className =? "Gxmessage"        --> doFloat
+    , className =? "Kodi"             --> doFloat
+    , className =? "mpv"              --> doFloat
+    , title =? "xmessage"             --> doFloat
+    , title =? "Hold On"              --> doFloat
     ]
 
 keys' =
@@ -99,24 +97,14 @@ keys' =
     , ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 5%-")
     , ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 5%+")
     , ((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
-    , ((0, xF86XK_AudioPlay), spawn "cmus-remote --pause")
-    , ((0, xF86XK_AudioStop), spawn "cmus-remote --stop")
-    , ((0, xF86XK_AudioPrev), spawn "cmus-remote --prev")
-    , ((0, xF86XK_AudioNext), spawn "cmus-remote --next")
     ]
 
 keysP' =
     [ ("M-S-l", spawn "light-locker-command --lock")
-    , ("M-x w", spawn "uzbl-tabbed")
     , ("M-x c", spawn "chromium")
     , ("M-x x", spawn "chromium --incognito")
-    , ("M-x i", spawn $ terminal' ++ " -e bash -i -c mcabber")
     , ("M-x v", spawn $ terminal' ++ " -e bash -i -c vim")
-    , ("M-x m", spawn $ terminal' ++ " -e bash -i -c cmus")
-    --, ("M-x t", spawn "transmission-gtk")
+    , ("M-x u", spawn "unity-editor")
+    , ("M-x s", spawn "slack")
     , ("M-x p", spawn "zathura")
-    , ("M-g m", spawn "sh morrowind")
-    , ("M-g w", spawn "sh warcraft")
-    , ("M-g g", spawn "sh garena")
-    , ("M-g h", spawn "sh hearthstone")
     ]
