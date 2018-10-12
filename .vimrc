@@ -164,6 +164,8 @@ endif
 " {{{ fugitive
 if dein#is_sourced('vim-fugitive')
   nnoremap <leader>gs :<C-u>Gstatus<CR>
+  nnoremap <leader>gd :<C-u>Gdiff<CR>
+  nnoremap <leader>gc :<C-u>Gcommit --verbose<CR>
   nnoremap <leader>gpl :<C-u>Gpull --ff-only<CR>
   nnoremap <leader>gps :<C-u>Gpush<CR>
 endif
@@ -183,7 +185,7 @@ if has('python') || has('python3')
 
   let g:jedi#goto_command = "<leader>gg"
   let g:jedi#goto_assignments_command = "<leader>ga"
-  let g:jedi#goto_definitions_command = "<leader>gd"
+  let g:jedi#goto_definitions_command = "<leader>gt"
   let g:jedi#documentation_command = "<leader>dc"
   let g:jedi#usages_command = "<leader>fu"
   let g:jedi#rename_command = "<leader>rn"
