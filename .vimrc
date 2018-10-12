@@ -427,6 +427,8 @@ if has('nvim')
   set inccommand=nosplit
 endif
 
+set diffopt=filler,vertical
+
 " Settings }}}
 
 
