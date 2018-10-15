@@ -81,6 +81,7 @@ manageHook' = composeAll
     , className =? "Kodi"             --> doFloat
     , className =? "mpv"              --> doFloat
     , title =? "xmessage"             --> doFloat
+    , title =? "Starting Unity..."    --> doFloat
     , title =? "Hold On"              --> doFloat
     ]
 
