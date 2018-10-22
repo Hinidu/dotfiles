@@ -33,8 +33,6 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('w0rp/ale')
   call dein#add('tomtom/tcomment_vim')
   call dein#add('majutsushi/tagbar')
-  call dein#add('Shougo/unite.vim')
-  call dein#add('tsukkee/unite-tag')
   call dein#add('bling/vim-airline')
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-eunuch')
@@ -118,21 +116,6 @@ else
   colorscheme solarized
 endif
 " }}}
-
-
-" {{{ Unite
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
-let s:unite_sorters = ['sorter_word']
-if has('python') || has('python3')
-  call add(s:unite_sorters, 'sorter_selecta')
-endif
-call unite#filters#sorter_default#use(s:unite_sorters)
-
-nnoremap <leader>ur :<C-u>Unite -start-insert file_rec/async:!<CR>
-nnoremap <leader>ub :<C-u>Unite -start-insert buffer<CR>
-nnoremap <leader>ut :<C-u>Unite -start-insert tag<CR>
-" }}} Unite
 
 
 " {{{ denite
