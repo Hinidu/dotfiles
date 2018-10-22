@@ -31,6 +31,7 @@ if dein#load_state('~/.vim/bundle/')
     call dein#add('tpope/vim-sensible')
   endif
   call dein#add('w0rp/ale')
+  call dein#add('jsfaint/gen_tags.vim')
   call dein#add('tomtom/tcomment_vim')
   call dein#add('majutsushi/tagbar')
   call dein#add('bling/vim-airline')
@@ -104,6 +105,13 @@ if has('nvim')
 else
   colorscheme solarized
 endif
+" }}}
+
+
+" gen_tags {{{
+let g:loaded_gentags#gtags = 1
+let g:gen_tags#ctags_auto_gen = 1
+let g:gen_tags#use_cache_dir = 0
 " }}}
 
 
@@ -182,8 +190,27 @@ let g:ale_python_mypy_options = '--check-untyped-defs --ignore-missing-imports'
 " move
 let g:move_key_modifier = 'C'
 
-" Tagbar
+" Tagbar {{{
 nnoremap <leader>tb :TagbarToggle<CR>
+
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'Elixir',
+    \ 'kinds'     : [
+        \ 'f:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ],
+    \ 'sro'        : '.'
+\ }
+" }}}
 
 " Tabular {{{
 if exists(":Tabularize")
