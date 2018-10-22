@@ -159,6 +159,7 @@ if has('python') || has('python3')
   let g:jedi#documentation_command = "<leader>dc"
   let g:jedi#usages_command = "<leader>fu"
   let g:jedi#rename_command = "<leader>rn"
+  " }}}
 endif
 
 
