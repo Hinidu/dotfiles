@@ -21,8 +21,6 @@ if dein#load_state('~/.vim/bundle/')
 
   call dein#add('Shougo/dein.vim')
 
-  call dein#add('Shougo/vimproc', {'build': 'make'})
-
   " Original repos on github
   if has('nvim')
     call dein#add('iCyMind/NeoSolarized')
