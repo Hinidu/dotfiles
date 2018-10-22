@@ -374,6 +374,11 @@ endfunction
 
 " FileType-specific settings {{{
 
+augroup filetype_cs
+  autocmd!
+  autocmd Filetype cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup end
+
 augroup filetype_haskell
   autocmd!
   " Backspace remove only one space in beginning of line in haskell sources
