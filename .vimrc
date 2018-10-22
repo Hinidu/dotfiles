@@ -42,7 +42,6 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('eagletmt/ghcmod-vim')
   " call dein#add('eagletmt/neco-ghc')
   call dein#add('xolox/vim-misc')
-  call dein#add('ledger/vim-ledger')
   " call dein#add('tpope/vim-dispatch')
   call dein#add('exu/pgsql.vim')
   call dein#add('saltstack/salt-vim')
@@ -485,31 +484,6 @@ augroup filetype_tex
   autocmd!
   autocmd BufRead,BufNewFile *.tex set filetype=tex
   autocmd FileType tex setlocal spell spelllang=ru,en textwidth=80
-augroup end
-
-function! s:LedgerAlign()
-  let curline = line(".")
-  let curcol = col(".")
-  let content = getline(curline)
-
-  if content !~ '^\s\+\S.*\S$'
-    return
-  endif
-
-  let length = len(content)
-  execute '?^\S?+1,/^\s*$/-1 Tabularize /.*\S.*\s\s\+\zs/l1l1r0'
-
-  let new_length = len(getline(curline))
-  if new_length != length
-    let curcol = curcol + new_length - length
-  endif
-
-  call cursor(curline, curcol)
-endfunction
-
-augroup filetype_ledger
-  autocmd!
-  autocmd FileType ledger autocmd TextChanged,TextChangedI <buffer> call <SID>LedgerAlign()
 augroup end
 
 " FileType-specific settings }}}
