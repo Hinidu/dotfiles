@@ -47,4 +47,4 @@
 
 [push]
   # "git push" should push only the current branch to the corresponding remote
-  default = simple
+  default = current
