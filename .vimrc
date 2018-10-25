@@ -145,7 +145,7 @@ if dein#is_sourced('vim-fugitive')
   nnoremap <leader>gd :<C-u>Gdiff<CR>
   nnoremap <leader>gc :<C-u>Gcommit --verbose<CR>
   nnoremap <leader>gpl :<C-u>Gpull --ff-only<CR>
-  nnoremap <leader>gps :<C-u>Gpush<CR>
+  nnoremap <leader>gps :<C-u>Gpush --set-upstream<CR>
 endif
 " }}} fugitive
 
