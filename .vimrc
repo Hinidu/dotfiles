@@ -259,6 +259,8 @@ let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 
 let g:sql_type_default = 'pgsql'
 
+let g:airline#extensions#keymap#enabled = 0
+
 " dein and plugins setup }}}
 
 
