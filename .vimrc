@@ -54,6 +54,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('hashivim/vim-terraform')
   call dein#add('juliosueiras/vim-terraform-completion')
+  call dein#add('fatih/vim-go')
 
   " vim-scripts repos on github
   call dein#add('vim-scripts/matchit.zip')
@@ -418,6 +419,11 @@ augroup filetype_haskell
   autocmd!
   " Backspace remove only one space in beginning of line in haskell sources
   autocmd Filetype haskell setlocal softtabstop=0
+augroup end
+
+augroup filetype_go
+  autocmd!
+  autocmd Filetype go setlocal noexpandtab nolist
 augroup end
 
 augroup filetype_vim
