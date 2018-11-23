@@ -3,7 +3,10 @@ Xcursor.theme: pGentoo-24
 URxvt.font: xft:Source Code Pro:size=10:autohint=true:antialias=true
 URxvt.perl-ext-common: default,matcher
 URxvt.scrollBar: off
-URxvt.saveLines: 4096
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.saveLines: 100000
 URxvt.termName: xterm-256color
 URxvt.url-launcher: chromium
 URxvt.matcher.button: 1
