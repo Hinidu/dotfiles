@@ -23,12 +23,12 @@ main = do
 
 monitorsCount = fmap length $ getScreenInfo =<< openDisplay ""
 
-myConfig = defaultConfig
+myConfig = def
     { terminal          = terminal'
     , workspaces        = workspaces'
     , layoutHook        = layoutHook'
     , startupHook       = startupHook'
-    , manageHook        = manageHook' <+> manageDocks <+> manageHook defaultConfig
+    , manageHook        = manageHook' <+> manageDocks <+> manageHook def
     , modMask           = modMask'
     , focusFollowsMouse = False
     }
@@ -66,7 +66,7 @@ layoutHook' = smartBorders $ avoidStruts
     $ onWorkspace "web" (Full ||| Grid)
     $ onWorkspace "term" (Grid ||| Full)
     $ onWorkspace "dev" Full
-    $ layoutHook defaultConfig
+    $ layoutHook def
 
 startupHook' = do
     setWMName "LG3D"
@@ -87,8 +87,8 @@ manageHook' = composeAll
 
 keys' =
     [ ((mask .|. modMask', key), φ scr)
-        | (key, scr) ← zip [xK_w, xK_e, xK_r] [0..]
-    , (φ, mask)  ← [(viewScreen, 0), (sendToScreen, shiftMask)]]
+      | (key, scr) ← zip [xK_w, xK_e, xK_r] [0..]
+      , (φ, mask)  ← [(viewScreen def, 0), (sendToScreen def, shiftMask)]]
     ++
     [ ((modMask' .|. shiftMask, xK_space), spawn $ terminal' ++ " -e fish -i -c vifm")
     , ((0, xK_Print), spawn "scrot -e 'mv $f ~/shots/; scrot-loader ~/shots/$n'")
