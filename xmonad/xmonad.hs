@@ -82,7 +82,7 @@ manageHook' = composeAll
     , className =? "mpv"              --> doFloat
     , title =? "xmessage"             --> doFloat
     , title =? "Starting Unity..."    --> doFloat
-    , title =? "Hold On"              --> doFloat
+    , title =? "Hold on..."           --> doFloat
     ]
 
 keys' =
