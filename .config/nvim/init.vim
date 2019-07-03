@@ -118,7 +118,7 @@ let g:gen_tags#use_cache_dir = 0
 
 " {{{ denite
 if has('python3')
-  call denite#custom#var('file_rec', 'command', ['rg', '--files', ''])
+  call denite#custom#var('file/rec', 'command', ['rg', '--files', ''])
 
   call denite#custom#var('grep', 'command', ['rg'])
   let rg_opts = ['--vimgrep', '--no-heading', '--smart-case']
@@ -132,7 +132,7 @@ if has('python3')
   call denite#custom#option('default', 'mode', 'normal')
 
   nnoremap <leader>dr :<C-u>Denite -resume<CR>
-  nnoremap <leader>df :<C-u>Denite file_rec<CR>
+  nnoremap <leader>df :<C-u>Denite file/rec<CR>
   nnoremap <leader>db :<C-u>Denite buffer<CR>
 
   nnoremap <leader>ff :<C-u>Denite grep<CR>
