@@ -14,10 +14,10 @@ if has('nvim') && has('win32')
   let g:python3_host_prog='C:\\Python34\\python.exe'
 endif
 
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundle/')
-  call dein#begin('~/.vim/bundle/')
+if dein#load_state('~/.cache/dein/')
+  call dein#begin('~/.cache/dein/')
 
   call dein#add('Shougo/dein.vim')
 
