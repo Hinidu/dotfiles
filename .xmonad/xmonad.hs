@@ -95,6 +95,8 @@ keys' =
     , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/shots/; scrot-loader ~/shots/$n'")
     , ((modMask', xK_Print), spawn "sleep 0.2; scrot -b -e 'mv $f ~/shots/; scrot-loader ~/shots/$n'")
     , ((0, 0x1008ff81), spawn "xmessage hello")
+    , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
+    , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
     , ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 5%-")
     , ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 5%+")
     , ((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
