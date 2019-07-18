@@ -11,9 +11,10 @@ Config { font = "xft:Source Code Pro:size=10:autohint=true:antialias=true"
        , borderColor = "#fdf6e3"
        , commands = [ Run Date "<fc=#CB4B16>%a %b %_d %H:%M:%S</fc>" "date" 10
                     , Run Com "cmus-status" [] "cmus" 10
+                    , Run Kbd [("us", "US"), ("ru", "RU")]
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#268bd2><icon=/home/hinidu/.xmonad/icons/mpd.xbm/> %cmus% <action=cmus-remote --prev><icon=/home/hinidu/.xmonad/icons/prev.xbm/></action> <action=cmus-remote --pause><icon=/home/hinidu/.xmonad/icons/play-pause.xbm/></action> <action=cmus-remote --stop><icon=/home/hinidu/.xmonad/icons/stop.xbm/></action> <action=cmus-remote --next><icon=/home/hinidu/.xmonad/icons/next.xbm/></action></fc> <action=amixer set Master toggle><fc=#DC322F><icon=/home/hinidu/.xmonad/icons/vol-mute.xbm/></fc></action> %date%"
+       , template = "%StdinReader% }{ <fc=#268bd2><icon=/home/hinidu/.xmonad/icons/mpd.xbm/> %cmus% <action=cmus-remote --prev><icon=/home/hinidu/.xmonad/icons/prev.xbm/></action> <action=cmus-remote --pause><icon=/home/hinidu/.xmonad/icons/play-pause.xbm/></action> <action=cmus-remote --stop><icon=/home/hinidu/.xmonad/icons/stop.xbm/></action> <action=cmus-remote --next><icon=/home/hinidu/.xmonad/icons/next.xbm/></action></fc> <action=amixer set Master toggle><fc=#DC322F><icon=/home/hinidu/.xmonad/icons/vol-mute.xbm/></fc></action> %date% <fc=#859900>%kbd%</fc>"
        }
