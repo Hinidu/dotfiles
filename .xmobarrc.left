@@ -1,4 +1,4 @@
-Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
+Config { font = "xft:Source Code Pro:size=10:autohint=true:antialias=true"
        , bgColor = "#fdf6e3"
        , fgColor = "#002b36"
        , position = Top
