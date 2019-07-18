@@ -34,7 +34,8 @@ if dein#load_state('~/.cache/dein/')
   call dein#add('jsfaint/gen_tags.vim')
   call dein#add('tomtom/tcomment_vim')
   call dein#add('majutsushi/tagbar')
-  call dein#add('bling/vim-airline')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-eunuch')
   call dein#add('matze/vim-move')
@@ -101,7 +102,7 @@ endif
 
 
 " Enable solarized {{{
-set background=dark
+set background=light
 if has('nvim')
   colorscheme NeoSolarized
 else
@@ -283,6 +284,7 @@ let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 let g:sql_type_default = 'pgsql'
 
 let g:airline#extensions#keymap#enabled = 0
+let g:airline_solarized_bg = 'light'
 
 " dein and plugins setup }}}
 
