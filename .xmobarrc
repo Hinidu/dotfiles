@@ -48,10 +48,9 @@ Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
                                          , "--high", "#DC322F"
                                          ] 600
                     , Run Kbd [("us", "US"), ("ru", "RU")]
-                    , Run Com "cmus-status" [] "cmus" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#268bd2>%cmus%</fc> %uptime% %cpu% %coretemp% %memory% %wlp4s0wi% %dynnetwork% %disku% %battery% %date% %UMKK% <fc=#859900>%kbd%</fc>"
+       , template = "%StdinReader% }{ %uptime% %cpu% %coretemp% %memory% %wlp4s0wi% %dynnetwork% %disku% %battery% %date% %UMKK% <fc=#859900>%kbd%</fc>"
        }
