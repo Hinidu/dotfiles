@@ -12,7 +12,7 @@ Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
        , commands = [ Run Uptime ["-t", "<fc=#2AA198>Up:</fc> <days>:<hours>:<minutes>"] 600
                     , Run Cpu ["-t", "<fc=#B58900>CPU:</fc> <total>", "-S", "True", "-L","20","-H","50","--normal","#B58900","--high","#DC322F"] 10
                     , Run CoreTemp ["-t", "<core0>C"] 60
-                    , Run Memory ["-t", "<fc=#D33682>Mem:</fc> <used>MB", "-L", "1024", "-H", "2048", "--normal", "#B58900", "--high", "#DC322F"] 10
+                    , Run Memory ["-t", "<fc=#D33682>Mem:</fc> <used>MB", "-L", "4096", "-H", "6144", "--normal", "#B58900", "--high", "#DC322F"] 10
                     , Run DynNetwork ["-t", "<rx>/<tx>"] 10
                     , Run Wireless "wlp4s0" ["-t", "<fc=#CB4B16><essid>:</fc>"] 60
                     , Run DiskU [("/", "<fc=#DC322F>Root:</fc> <used>/<size>"), ("/home", "<fc=#6C414C>Home:</fc> <used>/<size>")] [] 100
