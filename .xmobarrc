@@ -1,6 +1,6 @@
 Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
-       , bgColor = "#002b36"
-       , fgColor = "#657b83"
+       , bgColor = "#fdf6e3"
+       , fgColor = "#002b36"
        , position = Top
        , lowerOnStart = False
        , hideOnStart = False
@@ -8,7 +8,7 @@ Config { font = "xft:terminus:size=12:autohint=true:antialias=true"
        , overrideRedirect = False
        , persistent = False
        , border = NoBorder
-       , borderColor = "#002b36"
+       , borderColor = "#fdf6e3"
        , commands = [ Run Uptime ["--template", "<fc=#2AA198>Up:</fc> <days>:<hours>:<minutes>"] 600
                     , Run Cpu [ "--template", "<fc=#B58900>CPU:</fc> <total>"
                               , "-S", "True"
