@@ -294,6 +294,9 @@ let g:airline_solarized_bg = 'light'
 filetype plugin on
 syntax on
 
+" Fully disable mouse
+set mouse=
+
 " Tab width is 4 columns
 set tabstop=2
 " Backspace remove up to 4 spaces in beginning of line in insert mode
