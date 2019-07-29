@@ -57,6 +57,7 @@ if dein#load_state('~/.cache/dein/')
   call dein#add('juliosueiras/vim-terraform-completion')
   call dein#add('fatih/vim-go')
   call dein#add('LnL7/vim-nix')
+  call dein#add('vifm/vifm.vim')
 
   " vim-scripts repos on github
   call dein#add('vim-scripts/matchit.zip')
