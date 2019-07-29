@@ -13,6 +13,7 @@ function link() {
 link .config/git/config
 link .config/mpv/mpv.conf
 link .config/nvim/init.vim
+link .config/vifm/colors/solarized-light.vifm
 link .config/vifm/vifmrc
 link .ctags
 link .ssh/config
