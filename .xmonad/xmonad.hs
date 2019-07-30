@@ -100,6 +100,8 @@ keys' =
     , ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 5%-")
     , ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 5%+")
     , ((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
+    , ((modMask' .|. shiftMask, xK_m), spawn "xinput --set-prop 15 153 0")
+    , ((modMask', xK_m), spawn "xinput --set-prop 15 153 1")
     ]
 
 keysP' =
