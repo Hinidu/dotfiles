@@ -42,9 +42,6 @@ if dein#load_state('~/.cache/dein/')
   call dein#add('godlygeek/tabular')
   call dein#add('dag/vim2hs')
   call dein#add('eagletmt/ghcmod-vim')
-  " call dein#add('eagletmt/neco-ghc')
-  " call dein#add('tpope/vim-dispatch')
-  call dein#add('exu/pgsql.vim')
   call dein#add('vim-erlang/vim-erlang-runtime')
   call dein#add('vim-erlang/vim-erlang-compiler')
   call dein#add('vim-erlang/vim-erlang-omnicomplete')
@@ -82,14 +79,6 @@ if dein#load_state('~/.cache/dein/')
     call dein#add('junkblocker/patchreview-vim')
     call dein#add('codegram/vim-codereview')
   endif
-
-  " NeoBundleLazy 'matchit.zip', { 'autoload' : {
-  "     \ 'mappings' : ['%', 'g%']
-  "     \ }}
-  " let bundle = neobundle#get('matchit.zip')
-  " function! bundle.hooks.on_post_source(bundle)
-  "   silent! execute 'doautocmd Filetype' &filetype
-  " endfunction
 
   call dein#end()
   call dein#save_state()
