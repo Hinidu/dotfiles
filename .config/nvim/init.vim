@@ -185,17 +185,6 @@ if has('python') || has('python3')
 endif
 
 
-" syntastic  {{{
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_tex_checkers = ['lacheck']
-" Trying to avoid screen glitches
-let g:syntastic_full_redraws = 0
-" To quickly update UI with errors/warnings reported by syntastic
-set updatetime=500
-" }}}
-
-
 " ale  {{{
 let g:ale_python_mypy_options = '--check-untyped-defs --ignore-missing-imports'
 " }}}
