@@ -83,6 +83,7 @@ manageHook' = composeAll
     , title =? "xmessage"             --> doFloat
     , title =? "Starting Unity..."    --> doFloat
     , title =? "Hold on..."           --> doFloat
+    , className =? "Microsoft Teams - Preview" --> doFloat
     ]
 
 keys' =
