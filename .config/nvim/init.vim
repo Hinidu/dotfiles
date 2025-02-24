@@ -104,9 +104,9 @@ endif
 
 
 " gen_tags {{{
-let g:loaded_gentags#gtags = 1
-let g:gen_tags#ctags_auto_gen = 1
-let g:gen_tags#use_cache_dir = 0
+" let g:loaded_gentags#gtags = 1
+" let g:gen_tags#ctags_auto_gen = 1
+" let g:gen_tags#use_cache_dir = 0
 " }}}
 
 
