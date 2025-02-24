@@ -73,16 +73,16 @@ startupHook' = do
     spawn "~/.xmonad/startup-hook"
 
 manageHook' = composeAll
-    [ className =? "slack"            --> doShift "im"
-    , className =? "chromium-browser" --> doShift "web"
-    , className =? "Unity"            --> doShift "unity"
-    , title =? "zathura"              --> doShift "read"
-    , className =? "Gxmessage"        --> doFloat
-    , className =? "Kodi"             --> doFloat
-    , className =? "mpv"              --> doFloat
-    , title =? "xmessage"             --> doFloat
-    , title =? "Starting Unity..."    --> doFloat
-    , title =? "Hold on..."           --> doFloat
+    [ className =? "slack"                --> doShift "im"
+    , className =? "google-chrome-stable" --> doShift "web"
+    , className =? "Unity"                --> doShift "unity"
+    , title =? "zathura"                  --> doShift "read"
+    , className =? "Gxmessage"            --> doFloat
+    , className =? "Kodi"                 --> doFloat
+    , className =? "mpv"                  --> doFloat
+    , title =? "xmessage"                 --> doFloat
+    , title =? "Starting Unity..."        --> doFloat
+    , title =? "Hold on..."               --> doFloat
     , className =? "Microsoft Teams - Preview" --> doFloat
     ]
 
@@ -107,8 +107,8 @@ keys' =
 
 keysP' =
     [ ("M-S-l", spawn "light-locker-command --lock")
-    , ("M-x c", spawn "chromium")
-    , ("M-x x", spawn "chromium --incognito")
+    , ("M-x c", spawn "google-chrome-stable")
+    , ("M-x x", spawn "google-chrome-stable --incognito")
     , ("M-x v", spawn $ terminal' ++ " -e bash -i -c vim")
     , ("M-x u", spawn "unity-editor")
     , ("M-x s", spawn "slack")
