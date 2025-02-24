@@ -262,6 +262,14 @@ if dein#is_sourced('alchemist.vim')
   let g:alchemist#elixir_erlang_src = '/home/hinidu/sources'
 endif
 
+if dein#is_sourced('vim-mix-format')
+  let g:mix_format_on_save = 1
+endif
+
+if dein#is_sourced('vim-terraform')
+  let g:terraform_fmt_on_save = 1
+endif
+
 let g:local_vimrc = {'names': ['.lvimrc'], 'hash_fun': 'LVRHashOfFile'}
 
 let g:sql_type_default = 'pgsql'
