@@ -157,11 +157,13 @@ endif
 
 " {{{ fugitive
 if dein#is_sourced('vim-fugitive')
-  nnoremap <leader>gs :<C-u>Gstatus<CR>
+  nnoremap <leader>gs :<C-u>Git<CR>
   nnoremap <leader>gd :<C-u>Gdiff<CR>
-  nnoremap <leader>gc :<C-u>Gcommit --verbose<CR>
-  nnoremap <leader>gpl :<C-u>Gpull --ff-only<CR>
-  nnoremap <leader>gps :<C-u>Gpush --set-upstream<CR>
+  nnoremap <leader>gcm :<C-u>Git commit --verbose<CR>
+  nnoremap <leader>gca :<C-u>Git commit --verbose --amend<CR>
+  nnoremap <leader>gpl :<C-u>Git pull --ff-only --recurse-submodules<CR>
+  nnoremap <leader>gps :<C-u>Git push --set-upstream<CR>
+  nnoremap <leader>gpf :<C-u>Git push --set-upstream --force<CR>
 endif
 " }}} fugitive
 
